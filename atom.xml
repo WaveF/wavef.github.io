@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wavef.github.io/</id>
     <title>WaveF</title>
-    <updated>2019-07-15T17:17:02.992Z</updated>
+    <updated>2019-07-15T17:19:14.363Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wavef.github.io/"/>
     <link rel="self" href="https://wavef.github.io//atom.xml"/>
@@ -125,7 +125,7 @@
     }
 }
 </code></pre>
-<h2 id="机器人发送图文消息">机器人发送图文消息</h2>
+<h2 id="机器人发图文消息">机器人发图文消息</h2>
 <pre><code>function sendArticle(arg) {
     var robot = arg.robot || '';
     var data = {
