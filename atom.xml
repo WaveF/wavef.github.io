@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wavef.github.io/</id>
     <title>WaveF</title>
-    <updated>2019-07-15T15:21:15.045Z</updated>
+    <updated>2019-07-15T15:23:12.002Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wavef.github.io/"/>
     <link rel="self" href="https://wavef.github.io//atom.xml"/>
@@ -58,7 +58,8 @@
     await console.log('- 成功进入表格');
     
 		await console.log('- 计划任务待命...');
-		await schedule.scheduleJob(plan, () =&gt; {
+		// 周一到周五每天晚上20:00执行
+		await schedule.scheduleJob('0 0 20 * * 1-5', () =&gt; {
 				takeAction(page);
 		}
 };
