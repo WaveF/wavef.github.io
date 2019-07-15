@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>企业微信群日报自动化 | WaveF</title>
 <meta name="description" content="A Desigrammer" />
-<link rel="shortcut icon" href="https://wavef.github.io//favicon.ico?v=1563203701305">
+<link rel="shortcut icon" href="https://wavef.github.io//favicon.ico?v=1563204067090">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://wavef.github.io//styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://wavef.github.io/">
-  <img class="avatar" src="https://wavef.github.io//images/avatar.png?v=1563203701305" alt="">
+  <img class="avatar" src="https://wavef.github.io//images/avatar.png?v=1563204067090" alt="">
   </a>
   <h1 class="site-title">
     WaveF
@@ -80,7 +80,7 @@
                 2019-07-15
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
               
                 <a href="https://wavef.github.io//tag/omR7YfTn3" class="post-tag">
@@ -98,17 +98,17 @@
             <div class="post-content-wrapper">
               <div class="post-content">
                 <p>公司要求每天在腾讯共享文档上写日报，还要求必须在企业微信群里再发一次，这种搬砖行为总是导致我回到公司打开休眠的电脑后忘记重新登录企业微信而漏接消息，于是萌生了自动化转发的念头。</p>
-<h1 id="思路">思路：</h1>
+<h1 id="思路">思路</h1>
 <p>用puppeteer进行模拟操作，用request通知机器人发送消息，用node-schedule定时运行node脚本。</p>
-<h1 id="难点">难点：</h1>
+<h1 id="难点">难点</h1>
 <ol>
 <li>腾讯文档内容区域是canvas，无法抓取内容，但可以通过键盘将焦点移动到目标表格上，然后通过id获得输入栏的值（这个是DOM元素），这样就可以取得目标表格的值了。</li>
 <li>用QQ帐号和密码可以全自动登录，可是当频繁登录时一旦出现安全异常提示，就会一直卡在登录界面，就算扫码也无法进入，后来改为微信扫码登录解决，微信扫码可以频繁登录不报错。</li>
 <li>由于使用微信扫码登入，所以需要把流程分为两部分，第一部分是扫码登录进入腾讯文档（只需初次执行脚本时扫一次即可），第二部分则是定时循环执行：获取日报内容。注意期间不能关闭虚拟浏览器，否则又要扫码登录……当然也可以多建一个机器人把登录二维码截屏发到另一个群里，自己扫码登录</li>
 <li>CentOS里运行puppeteer还需要安装很多其他软件，这个需要自行google，而且虚拟浏览器里还会由于缺少中文字体而无法正常显示，想省事就找台Win服务器去跑吧……</li>
 </ol>
-<h1 id="核心代码">核心代码：</h1>
-<h2 id="登录部分">登录部分</h2>
+<h1 id="核心代码">核心代码</h1>
+<h2 id="登录腾讯文档">登录腾讯文档</h2>
 <pre><code>async function autoReport() {
     const browser = await puppeteer.launch({ headless: !debug; });
     const page = await browser.newPage();
@@ -144,15 +144,109 @@
 		}
 };
 </code></pre>
+<h2 id="获取表格内容">获取表格内容</h2>
+<pre><code>async function takeAction(page) {
+    await console.log(`\n----- ${getDate()}, 星期${day} -----`);
+
+    await console.log('- 切换表');
+    await page.mouse.move(weekTab[weekId], 780);
+    await page.mouse.down();
+    await page.mouse.up();
+    await page.waitFor(delay);
+
+    await console.log('- 全选表');
+    await page.mouse.move(20, 140);
+    await page.mouse.down();
+    await page.mouse.up();
+    await page.waitFor(delay);
+
+    // 表格焦点下移次数
+    for (let i = 0; i &lt; floor; i++) {
+        await console.log('- 键盘：下');
+        await page.keyboard.press('ArrowDown');
+        await page.waitFor(200);
+    }
+
+    // 表格焦点右移次数（因为有人名栏，所以要多移动一次）
+    for (let i = 0; i &lt; day + 1; i++) {
+        await console.log('- 键盘：右');
+        await page.keyboard.press('ArrowRight');
+        await page.waitFor(200);
+    }
+
+    const element = await page.$(&quot;#alloy-simple-text-editor&quot;);
+    let text = await page.evaluate(element =&gt; element.textContent, element);
+
+    if (text.indexOf('未完成') != -1 || text === '') {
+        await console.log('当前位置未发现日报!');
+    } else {
+        let tasks = await text.split(sp);
+            tasks = await tasks.filter(n =&gt; {
+                return n;
+            });
+
+            tasks = await tasks.map((val, idx) =&gt; {
+                if (val[0] === ' ') {
+                    return val.replace(' ', '');
+                } else {
+                    return val;
+                }
+            });
+
+        await console.log(tasks);
+        await page.waitFor(delay*10);
+				await sendArticle({
+						title: `${name}, ${getDate()}`,
+						desc : tasks.join('\n'),
+						link : docURL,
+						image: cover,
+						robot: robotURL
+				});
+    }
+}
+</code></pre>
+<h2 id="机器人发送图文消息">机器人发送图文消息</h2>
+<pre><code>function sendArticle(arg) {
+    var robot = arg.robot || '';
+    var data = {
+        &quot;msgtype&quot;: &quot;news&quot;,
+        &quot;news&quot;: {
+            &quot;articles&quot;: [{
+                &quot;title&quot;: arg.title || '标题',
+                &quot;description&quot;: arg.desc || '描述',
+                &quot;url&quot;: arg.link || '链接',
+                &quot;picurl&quot;: arg.image || '图片'
+            }]
+        }
+    };
+
+    var options = {
+        uri: robot,
+        method: 'POST',
+        headers: {
+            &quot;content-type&quot;: &quot;application/json&quot;
+        },
+        json: data
+    };
+
+    request(options, function (error, response, body) {
+        if (!error &amp;&amp; response.statusCode == 200) {
+            // console.log(response);
+        }
+    });
+}
+</code></pre>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
-<li><a href="#%E6%80%9D%E8%B7%AF">思路：</a></li>
-<li><a href="#%E9%9A%BE%E7%82%B9">难点：</a></li>
-<li><a href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81">核心代码：</a>
+<li><a href="#%E6%80%9D%E8%B7%AF">思路</a></li>
+<li><a href="#%E9%9A%BE%E7%82%B9">难点</a></li>
+<li><a href="#%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81">核心代码</a>
 <ul>
-<li><a href="#%E7%99%BB%E5%BD%95%E9%83%A8%E5%88%86">登录部分</a></li>
+<li><a href="#%E7%99%BB%E5%BD%95%E8%85%BE%E8%AE%AF%E6%96%87%E6%A1%A3">登录腾讯文档</a></li>
+<li><a href="#%E8%8E%B7%E5%8F%96%E8%A1%A8%E6%A0%BC%E5%86%85%E5%AE%B9">获取表格内容</a></li>
+<li><a href="#%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%8F%91%E9%80%81%E5%9B%BE%E6%96%87%E6%B6%88%E6%81%AF">机器人发送图文消息</a></li>
 </ul>
 </li>
 </ul>
