@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>企业微信群日报自动化 | WaveF</title>
 <meta name="description" content="A Desigrammer" />
-<link rel="shortcut icon" href="https://wavef.github.io//favicon.ico?v=1563202386055">
+<link rel="shortcut icon" href="https://wavef.github.io//favicon.ico?v=1563203422992">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://wavef.github.io//styles/main.css">
@@ -20,7 +20,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://wavef.github.io/">
-  <img class="avatar" src="https://wavef.github.io//images/avatar.png?v=1563202386055" alt="">
+  <img class="avatar" src="https://wavef.github.io//images/avatar.png?v=1563203422992" alt="">
   </a>
   <h1 class="site-title">
     WaveF
@@ -98,6 +98,19 @@
             <div class="post-content-wrapper">
               <div class="post-content">
                 <p>公司要求每天在腾讯共享文档上写日报，还要求必须在企业微信群里再发一次，这种搬砖行为总是导致我回到公司打开休眠的电脑后忘记重新登录企业微信而漏接消息，于是萌生了自动化转发的念头。</p>
+<p><strong>思路：</strong><br>
+用puppeteer进行模拟操作，用request通知机器人发送消息，用node-schedule定时运行node脚本。</p>
+<p><strong>难点：</strong></p>
+<ol>
+<li>腾讯文档内容区域是canvas，无法抓取内容，但可以通过键盘将焦点移动到目标表格上，然后通过id获得输入栏的值（这个是DOM元素），这样就可以取得目标表格的值了。</li>
+<li>用QQ帐号和密码可以全自动登录，可是当频繁登录时一旦出现安全异常提示，就会一直卡在登录界面，就算扫码也无法进入，后来改为微信扫码登录解决，微信扫码可以频繁登录不报错。</li>
+<li>由于使用微信扫码登入，所以需要把流程分为两部分，第一部分是扫码登录进入腾讯文档（只需初次执行脚本时扫一次即可），第二部分则是定时循环执行：获取日报内容。注意期间不能关闭虚拟浏览器，否则又要扫码登录……当然也可以多建一个机器人把登录二维码截屏发到另一个群里，自己扫码登录</li>
+<li>CentOS里运行puppeteer还需要安装很多其他软件，这个需要自行google，而且虚拟浏览器里还会由于缺少中文字体而无法正常显示，想省事就找台Win服务器去跑吧……</li>
+</ol>
+<p><strong>核心代码：</strong></p>
+<blockquote>
+<p>这里不会贴出所有代码，请自行理解脑补</p>
+</blockquote>
 
               </div>
               <div class="toc-container">
