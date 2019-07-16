@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wavef.github.io/</id>
     <title>WaveF</title>
-    <updated>2019-07-16T01:50:45.655Z</updated>
+    <updated>2019-07-16T02:16:56.516Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wavef.github.io/"/>
     <link rel="self" href="https://wavef.github.io//atom.xml"/>
@@ -16,7 +16,186 @@
         <link href="https://wavef.github.io//post/how-to-make-affinity-designers-iconfont-assets">
         </link>
         <updated>2019-07-16T01:47:58.000Z</updated>
-        <content type="html"><![CDATA[<p>Ready...</p>
+        <content type="html"><![CDATA[<p>网上有很多免费或开源的字体图标资源，本可以很轻松的导入到AffinityDesigner（下称AD）里使用，无奈AD并不支持将嵌入式画板添加到资产库（Assets），且serif官方并没有为AD提供<strong>嵌入画板转图层</strong>的功能，所以还得把字体图标从AD导出为PDF或SVG，然后再导入回来成为单个矢量格式的图标集，再添加到资产库，但这个做法的硬伤就是无法保留图标名，这样制作出来的资产库也就无法在资产面板中检索。</p>
+<h1 id="思路">思路</h1>
+<p>既然AD无法做到，那通过其他软件协作就行了：</p>
+<ul>
+<li>首先从AD导出每个字体图标单独一个图层组的矢量PDF</li>
+<li>用Adobe Illustrator（下称AI）打开这个PDF，再另存为EPS8.0格式</li>
+<li>用Fireworks CS6打开这个EPS，执行批处理脚本，将文件名称从新赋予每个图标，并且每个图标都单独用一个图层文件夹装着，方便AD识别，最后输出为可编辑的矢量PSD，并调用AD打开这个PSD</li>
+<li>在AD中全选图标图层，在资产面板中添加所选取的对象为资产，即可制作出可检索的字体图标资产库</li>
+</ul>
+<blockquote>
+<p>很复杂是不？可这是目前唯一可行的办法啊，如果有更好的做法欢迎交流~<br>
+貌似AI导出的所有格式在AD里打开都无法识别图层名，所以Fireworks是必须的</p>
+</blockquote>
+<h1 id="fireworks脚本">Fireworks脚本</h1>
+<p>在Fw里写代码是非常方便愉悦的，因为她执行JS的速度炒鸡快，而且还有可直接拷贝代码的历史面板、Console控制台、DOM检查器等辅助面板加成，俨然一个开放的Chrome浏览器，但由于其32位应用程序的身份，在处理数量庞大的图片或操作复杂的矢量图形时可能会出现冻结的情况，不过不用担心，代码在后台跑得好好的，跑完后就正常了。</p>
+<p><em>Talk is cheap, show me the code:</em></p>
+<pre><code>try {
+
+    (function () {
+
+        var cfile = fw.appDir + &quot;/adPathConfig.cfg&quot;;
+        initConfig(cfile);
+        var adPath = readConfig(cfile);
+        if (!adPath) {
+            alert(&quot;未找到AffinityDesigner安装位置，请手动选择其主执行文件Designer.exe&quot;);
+            adPath = fw.browseForFileURL();
+
+            if (!adPath) return;
+            writeConfig(cfile, adPath);
+        }
+
+        var dom = fw.getDocumentDOM();
+        dom.selectAll();
+
+        var currentFolder = Files.getDirectory(dom.filePathForRevert);
+        var currentFileName = Files.getFilename(dom.filePathForRevert);
+        var currentFileExt = Files.getExtension(dom.filePathForRevert);
+
+        var iconsFolder = fw.browseForFolderURL('Choose icons location', currentFolder);
+        if (!iconsFolder) return;
+
+        var icons = Files.enumFiles(iconsFolder);
+
+        var names = [];
+        forEach(icons, function (i) {
+            var fileName = Files.getFilename(icons[i]);
+            var fileExt = Files.getExtension(icons[i]);
+            if (fileExt != '.svg') return;
+            names.push(fileName.split(fileExt).join(''));
+        });
+
+        if (fw.selection.length != names.length) {
+            alert('文件数量与图层数量不匹配，程序将退出！');
+            dom.selectNone();
+            return;
+        }
+
+
+        var eggs = fw.selection;
+        forEach(eggs.length, function (i) {
+            fw.selection = [eggs[i]];
+            dom.ungroup();
+
+            var egg = fw.selection;
+            forEach(egg.length, function (k) {
+                if (!egg[k].groupType) {
+                    fw.selection = [egg[k]];
+                    dom.arrange(&quot;backward&quot;);
+                    fillColor('#00ccff');
+                    dom.setOpacity(0);
+                }
+            });
+            fw.selection = egg;
+            dom.addNewLayer(names[i], false);
+            dom.moveSelectionToLayer(-1, false, &quot;none&quot;, -1);
+        });
+
+        dom.selectAll();
+        ungroup();
+        fillColor('#666666');
+
+        dom.currentLayerNum = 0;
+        dom.deleteLayer(-1);
+        dom.selectNone();
+
+
+        var psdFileName = currentFileName.split(currentFileExt).join('.psd');
+        var psdFilePath = Files.makePathFromDirAndFile(currentFolder, psdFileName);
+        exportPSD(psdFilePath);
+
+        fw.launchApp(adPath, [psdFilePath]);
+
+        function exportPSD(path) {
+            fw.setPref(&quot;PsdExport_Warn100&quot;, false);
+
+            var kObjToLayer = 1;
+            var kFlatten = 2;
+            fw.setPref(&quot;PsdExport_Layers&quot;, kObjToLayer);
+
+            var kEffectEditable = 1;
+            var kEffectRender = 2;
+            fw.setPref(&quot;PsdExport_Effects&quot;, kEffectEditable);
+
+            var kTextEditable = 1;
+            var kTextRender = 2;
+            fw.setPref(&quot;PsdExport_Text&quot;, kTextEditable);
+
+            fw.exportPSD(null, path);
+        }
+
+        function initConfig(filePath) {
+            if (!filePath) return;
+            if (Files.exists(filePath)) return;
+            alert('未发现AD路径配置文件，将自动创建...');
+            var f = Files.createFile(filePath, &quot;TEXT&quot;, &quot;????&quot;);
+
+            if (!Files.exists(filePath)) {
+                alert('创建文件失败，请检查是否有足够权限执行此操作');
+                return false;
+            }
+            return true;
+        }
+
+        function readConfig(filePath) {
+            var f = Files.open(filePath, true);
+            var line = f.readline();
+            f.close();
+            return line;
+        }
+
+        function writeConfig(filePath, text) {
+            var f = Files.open(filePath, true);
+            f.write(text);
+            f.close();
+        }
+
+        function ungroup() {
+            for (var u = 0; u &lt; 10; u++) {
+                dom.ungroup();
+            }
+        }
+
+        function forEach(arr, callback) {
+            var loop = 0;
+            if (typeof arr == 'number') {
+                loop = arr;
+            } else {
+                loop = arr.length;
+            }
+            for (var i = 0; i &lt; loop; i++) {
+                callback(i);
+            }
+        }
+
+        function fillColor(hex) {
+            fw.getDocumentDOM().setFillNColor({
+                category: &quot;fc_Solid&quot;,
+                ditherColors: [&quot;#000000&quot;, &quot;#000000&quot;],
+                edgeType: &quot;antialiased&quot;,
+                feather: 0,
+                gradient: null,
+                name: &quot;Solid&quot;,
+                pattern: null,
+                shape: &quot;solid&quot;,
+                stampingMode: &quot;blend opaque&quot;,
+                textureBlend: 0,
+                webDitherTransparent: false
+            }, hex);
+        }
+
+    }());
+
+} catch (exception) {
+    alert([exception, exception.lineNumber, exception.fileName].join(&quot;\n&quot;));
+}
+</code></pre>
+<h1 id="注意事项">注意事项</h1>
+<p>由于是采用读取文件名来为图层命名的方式来操作，所以这里没法保证文件名和图标是绝对一一对应的，这里必须要求图标名能够按照A-Z自然排序，最大限度确保不会出现偏差。</p>
+<h1 id="其他">其他</h1>
+<p>我用这个方法把开源的<a href="https://www.minicg.com/index.php/assets/382.html">Remix字体图标</a>转成了AD的资产库，发布在<a href="https://minicg.com">miniCG.com</a>上，<a href="http://www.minicg.com/index.php/fw">Fw的相关资源</a>也能在这里找到。</p>
 ]]></content>
     </entry>
     <entry>
