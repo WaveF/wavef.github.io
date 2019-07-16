@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wavef.github.io/</id>
     <title>WaveF</title>
-    <updated>2019-07-16T15:31:15.383Z</updated>
+    <updated>2019-07-16T15:33:40.439Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wavef.github.io/"/>
     <link rel="self" href="https://wavef.github.io//atom.xml"/>
@@ -62,7 +62,7 @@ window.cat = {
 	}
 };
 </code></pre>
-<p>这里把小猫<code>cat</code>挂载到全局变量<code>window</code>上，前端伙计只需要调用<code>cat.lookat(N);</code>就能控制小猫看哪里（snap.svg的旋转还是挺蛋疼的，直接跳帧很方便），而调用<code>cat.watching(false);</code>小猫就会捂眼，简单粗暴省时省力。</p>
+<p>这里把小猫<code>cat</code>挂载到全局变量<code>window</code>上，前端伙计只需要调用<code>cat.lookat(N);</code>就能控制小猫看哪里，而调用<code>cat.watching(false);</code>小猫就会捂眼，简单粗暴省时省力。</p>
 ]]></content>
     </entry>
     <entry>
