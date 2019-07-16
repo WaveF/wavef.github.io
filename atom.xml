@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wavef.github.io/</id>
     <title>WaveF</title>
-    <updated>2019-07-16T06:04:55.538Z</updated>
+    <updated>2019-07-16T13:25:01.635Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wavef.github.io/"/>
     <link rel="self" href="https://wavef.github.io//atom.xml"/>
@@ -20,7 +20,7 @@
 <h1 id="思路">思路</h1>
 <p>既然AD无法做到，那通过其他软件协作就行了：</p>
 <ul>
-<li>首先从AD导出每个字体图标单独一个图层组的矢量PDF</li>
+<li>首先从AD导出矢量PDF（导出后每个字体图标都会在独立的图层组里）</li>
 <li>用Adobe Illustrator（下称AI）打开这个PDF，再另存为EPS8.0格式</li>
 <li>用Fireworks CS6打开这个EPS，执行批处理脚本，将文件名称从新赋予每个图标，并且每个图标都单独用一个图层文件夹装着，方便AD识别，最后输出为可编辑的矢量PSD，并调用AD打开这个PSD</li>
 <li>在AD中全选图标图层，在资产面板中添加所选取的对象为资产，即可制作出可检索的字体图标资产库</li>

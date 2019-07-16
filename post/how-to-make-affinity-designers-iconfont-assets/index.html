@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>制作AffinityDesigner的Iconfont资产库 | WaveF</title>
 <meta name="description" content="A Desigrammer" />
-<link rel="shortcut icon" href="https://wavef.github.io//favicon.ico?v=1563246472244">
+<link rel="shortcut icon" href="https://wavef.github.io//favicon.ico?v=1563283498469">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">-->
 <link rel="stylesheet" href="https://cdn.bootcss.com/KaTeX/0.10.2/katex.min.css">
@@ -22,7 +22,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://wavef.github.io/">
-  <img class="avatar" src="https://wavef.github.io//images/avatar.png?v=1563246472244" alt="">
+  <img class="avatar" src="https://wavef.github.io//images/avatar.png?v=1563283498469" alt="">
   </a>
   <h1 class="site-title">
     WaveF
@@ -123,7 +123,7 @@
 <h1 id="思路">思路</h1>
 <p>既然AD无法做到，那通过其他软件协作就行了：</p>
 <ul>
-<li>首先从AD导出每个字体图标单独一个图层组的矢量PDF</li>
+<li>首先从AD导出矢量PDF（导出后每个字体图标都会在独立的图层组里）</li>
 <li>用Adobe Illustrator（下称AI）打开这个PDF，再另存为EPS8.0格式</li>
 <li>用Fireworks CS6打开这个EPS，执行批处理脚本，将文件名称从新赋予每个图标，并且每个图标都单独用一个图层文件夹装着，方便AD识别，最后输出为可编辑的矢量PSD，并调用AD打开这个PSD</li>
 <li>在AD中全选图标图层，在资产面板中添加所选取的对象为资产，即可制作出可检索的字体图标资产库</li>
@@ -377,11 +377,17 @@
 
 </script>
 
+
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/instantclick/3.1.0/instantclick.min.js" data-no-instant></script>
 <script data-no-instant>
   InstantClick.on('change', function(){
-    hljs.initHighlightingOnLoad();
-    console.log('hljs inited');
+	$('pre code').each(function(i, block){
+        hljs.highlightBlock(block);
+    });
+    $('code.hljs').each(function(i, block){
+        hljs.lineNumbersBlock(block);
+    });
   });
   InstantClick.init();
 </script>
