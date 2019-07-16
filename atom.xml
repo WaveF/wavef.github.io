@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wavef.github.io/</id>
     <title>WaveF</title>
-    <updated>2019-07-15T17:21:52.343Z</updated>
+    <updated>2019-07-16T01:50:45.655Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wavef.github.io/"/>
     <link rel="self" href="https://wavef.github.io//atom.xml"/>
@@ -10,6 +10,15 @@
     <logo>https://wavef.github.io//images/avatar.png</logo>
     <icon>https://wavef.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, WaveF</rights>
+    <entry>
+        <title type="html"><![CDATA[制作AffinityDesigner的Iconfont资产库]]></title>
+        <id>https://wavef.github.io//post/how-to-make-affinity-designers-iconfont-assets</id>
+        <link href="https://wavef.github.io//post/how-to-make-affinity-designers-iconfont-assets">
+        </link>
+        <updated>2019-07-16T01:47:58.000Z</updated>
+        <content type="html"><![CDATA[<p>Ready...</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[企业微信群日报自动化]]></title>
         <id>https://wavef.github.io//post/auto-send-daily-report-to-wework</id>
