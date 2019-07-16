@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wavef.github.io/</id>
     <title>WaveF</title>
-    <updated>2019-07-16T15:02:31.125Z</updated>
+    <updated>2019-07-16T15:31:15.383Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wavef.github.io/"/>
     <link rel="self" href="https://wavef.github.io//atom.xml"/>
@@ -28,8 +28,41 @@
 </ul>
 <p>个人推荐第一个，点击Install然后选择zxp安装包即可，哪怕软件没出现在列表里好像也能安装成功，而第二个是Adobe官方推荐的，成功率在我这里只有20%……命令行工具只能算是最后的抢救了。</p>
 <h1 id="案例">案例</h1>
-<p>正好要做一只猫趴在登录窗口里，用户输入账户名时，小猫的眼睛会盯着光标移动，用户输入密码时，小猫会用手捂住眼睛，而小猫的尾巴则会一直甩一直甩~<br>
-<img src="https://wavef.github.io//post-images/1563289300793.gif" alt=""></p>
+<p>正好要做一只猫趴在登录窗口里，用户输入账户名时，小猫的眼睛会盯着光标移动，用户输入密码时，小猫会用手捂住眼睛，而小猫的尾巴则会一直甩一直甩~</p>
+<p><img src="https://wavef.github.io//post-images/1563289300793.gif" alt="小趴猫"></p>
+<p><img src="https://wavef.github.io//post-images/1563289913508.gif" alt="小猫盯着"></p>
+<p><img src="https://wavef.github.io//post-images/1563289925021.gif" alt="小猫捂脸"></p>
+<p>只需要把关键动作的动画做在元件内（影片剪辑/MovieClip），然后用代码控制帧的跳转即可，动画制作过程就不说了，懂的自然懂，不懂的可以搜索Flash动画基础教程，由于An只是Flash换了个名字的马甲，所以并没有什么Animate动画基础教程，都是炒Flash的冷饭！</p>
+<h1 id="代码">代码</h1>
+<p>为小猫的眼睛添加实例名：<code>eye1</code> 和 <code>eye2</code><br>
+为小猫的小手添加实例名：<code>hand1</code> 和 <code>hand2</code><br>
+控制代码如下：</p>
+<pre><code>var root = this;
+var eye1 = root.eye1;
+var eye2 = root.eye2;
+var hand1 = root.hand1;
+var hand2 = root.hand2;
+
+root.stop();
+window.cat = {
+	lookat: function (step) {
+		if (step &gt; 0 &amp;&amp; step &lt; 100) {
+			eye1.gotoAndStop(step);
+			eye2.gotoAndStop(step);
+		}
+	},
+	watching: function (flag) {
+		if (flag) {
+			hand1.gotoAndPlay(16);
+			hand2.gotoAndPlay(16);
+		} else {
+			hand1.gotoAndPlay(2);
+			hand2.gotoAndPlay(2);
+		}
+	}
+};
+</code></pre>
+<p>这里把小猫<code>cat</code>挂载到全局变量<code>window</code>上，前端伙计只需要调用<code>cat.lookat(N);</code>就能控制小猫看哪里（snap.svg的旋转还是挺蛋疼的，直接跳帧很方便），而调用<code>cat.watching(false);</code>小猫就会捂眼，简单粗暴省时省力。</p>
 ]]></content>
     </entry>
     <entry>
