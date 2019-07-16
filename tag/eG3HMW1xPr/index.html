@@ -123,8 +123,10 @@
 
 <script>
   hljs.initHighlightingOnLoad()
-
-  let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+  
+  if (!mainNavLinks) {
+    var mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+  }
 
   // This should probably be throttled.
   // Especially because it triggers during smooth scrolling.
