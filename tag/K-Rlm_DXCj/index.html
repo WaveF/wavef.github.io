@@ -142,7 +142,9 @@
 </div>
 
 <script>
-  hljs.initHighlightingOnLoad()
+  InstantClick.on('change', function(){
+    hljs.initHighlightingOnLoad();
+  });
   
   if (!mainNavLinks) {
     var mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
