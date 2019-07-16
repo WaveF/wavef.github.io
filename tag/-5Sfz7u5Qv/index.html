@@ -161,6 +161,7 @@
 
     mainNavLinks.forEach((link, index) => {
       let section = document.getElementById(decodeURI(link.hash).substring(1));
+      if (!section) return;
       let nextSection = null
       if (mainNavLinks[index + 1]) {
         nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
