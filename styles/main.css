@@ -970,8 +970,5 @@ td {
         color: #FF9B00;
       }
     
-      .tags-container .tag:hover {
-  background: #212529;
-  color: #fc0;
-}
+      .tags-container .tag:hover { background: #212529; color: #fc0; }
     
