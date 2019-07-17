@@ -350,6 +350,9 @@ td {
   flex-direction: column;
   padding: 0 24px;
 }
+#instantclick-bar {
+  background: #fc0;
+}
 .site-header {
   padding: 48px 0;
   text-align: center;
