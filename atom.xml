@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wavef.github.io/</id>
     <title>WaveF</title>
-    <updated>2019-07-17T14:02:55.548Z</updated>
+    <updated>2019-07-17T16:01:47.591Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wavef.github.io/"/>
     <link rel="self" href="https://wavef.github.io//atom.xml"/>
@@ -10,6 +10,31 @@
     <logo>https://wavef.github.io//images/avatar.png</logo>
     <icon>https://wavef.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, WaveF</rights>
+    <entry>
+        <title type="html"><![CDATA[纯前端的在线JSON存储服务]]></title>
+        <id>https://wavef.github.io//post/frontend-json-storage-online</id>
+        <link href="https://wavef.github.io//post/frontend-json-storage-online">
+        </link>
+        <updated>2019-07-17T14:05:08.000Z</updated>
+        <content type="html"><![CDATA[<p>有时想写些简单的小玩意放到网上分享给朋友，却苦于不懂后端代码、不想碰数据库、没钱买服务器？那么这里有几个便捷的JSON服务可以帮到你：</p>
+<ul>
+<li><a href="https://jsonbin.io">JSONbin.io</a></li>
+<li><a href="https://www.jsonstore.io">JsonStore.io</a></li>
+<li><a href="http://myjson.com">Myjson.com</a></li>
+<li><a href="https://jsonstorage.net">JsonStorage.net</a></li>
+</ul>
+<p>其实之前我也自己尝试用PHP边查边写了个叫JsonPen的网站，后来才发现原来国外早已经实现了，于是果断弃坑，毕竟我压根不想学PHP……</p>
+<p>上面介绍的那些服务里<strong>Myjson</strong>和<strong>JsonStorage</strong>比较简陋，有点不知道哪天突然就会挂掉的赶脚……<strong>JSONbin</strong>是四款里唯一需要注册后才能创建json的，支持版本管理和secret-key验证、可创建公有和私有json（话说我一直没弄明白这私有的json安全怎么保障）、比较完善的说明文档、还有付费增加请求次数的增值服务……<strong>jsonstore</strong>同样免费，并且无需登录就能使用，同样很方便👏</p>
+<p>📝<em>Talk is cheap, show me the code:</em></p>
+<ul>
+<li><a href="https://codepen.io/WaveF/live/dxbedb">JsonBin范例</a></li>
+<li><a href="https://codepen.io/WaveF/pen/XvrqoO">JsonStore范例</a></li>
+<li><a href="https://codepen.io/WaveF/pen/MdZLYK">MyJson范例</a></li>
+<li><a href="https://codepen.io/WaveF/full/aeoKGN">JsonStorage范例</a></li>
+</ul>
+<p>以上是我在<a href="https://codepen.io">CodePen</a>用JQuery码的几个样本，别问我为什么2019还在用JQ，因为菜呗~ 😘</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[如何优雅的用Animate CC制作SVG交互动画]]></title>
         <id>https://wavef.github.io//post/create-interactive-svg-animation-with-animate-cc</id>
