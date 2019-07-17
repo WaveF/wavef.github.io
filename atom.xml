@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wavef.github.io/</id>
     <title>WaveF</title>
-    <updated>2019-07-17T16:12:57.709Z</updated>
+    <updated>2019-07-17T16:14:13.183Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wavef.github.io/"/>
     <link rel="self" href="https://wavef.github.io//atom.xml"/>
@@ -27,9 +27,9 @@
 <p>上面介绍的那些服务里<strong>Myjson</strong>和<strong>JsonStorage</strong>比较简陋，有点不知道哪天突然就会挂掉的赶脚……<strong>JSONbin</strong>是四款里唯一需要注册后才能创建json的，支持版本管理和secret-key验证、可创建公有和私有json（话说我一直没弄明白这私有的json安全怎么保障）、比较完善的说明文档、还有付费增加请求次数的增值服务……<strong>jsonstore</strong>同样免费，并且无需登录就能使用，也很方便👏</p>
 <p>📝<em>Talk is cheap, show me the code:</em></p>
 <ul>
-<li><a href="https://codepen.io/WaveF/live/dxbedb">JsonBin 范例</a></li>
-<li><a href="https://codepen.io/WaveF/pen/XvrqoO">JsonStore 范例</a></li>
-<li><a href="https://codepen.io/WaveF/pen/MdZLYK">MyJson 范例</a></li>
+<li><a href="https://codepen.io/WaveF/full/dxbedb">JsonBin 范例</a></li>
+<li><a href="https://codepen.io/WaveF/full/XvrqoO">JsonStore 范例</a></li>
+<li><a href="https://codepen.io/WaveF/full/MdZLYK">MyJson 范例</a></li>
 <li><a href="https://codepen.io/WaveF/full/aeoKGN">JsonStorage 范例</a></li>
 </ul>
 <p>以上是我在<a href="https://codepen.io">CodePen</a>用JQuery码的几个样本，别问我为什么2019还在用JQ，因为菜呗~ 😘</p>
