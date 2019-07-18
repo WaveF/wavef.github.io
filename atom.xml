@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://wavef.cn</id>
+    <id>http://wavef.cn</id>
     <title>WaveF</title>
-    <updated>2019-07-18T06:34:59.243Z</updated>
+    <updated>2019-07-18T06:37:54.109Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://wavef.cn"/>
-    <link rel="self" href="https://wavef.cn/atom.xml"/>
+    <link rel="alternate" href="http://wavef.cn"/>
+    <link rel="self" href="http://wavef.cn/atom.xml"/>
     <subtitle>A Desigrammer</subtitle>
-    <logo>https://wavef.cn/images/avatar.png</logo>
-    <icon>https://wavef.cn/favicon.ico</icon>
+    <logo>http://wavef.cn/images/avatar.png</logo>
+    <icon>http://wavef.cn/favicon.ico</icon>
     <rights>All rights reserved 2019, WaveF</rights>
     <entry>
         <title type="html"><![CDATA[纯前端的在线JSON存储服务]]></title>
-        <id>https://wavef.cn/post/frontend-json-storage-online</id>
-        <link href="https://wavef.cn/post/frontend-json-storage-online">
+        <id>http://wavef.cn/post/frontend-json-storage-online</id>
+        <link href="http://wavef.cn/post/frontend-json-storage-online">
         </link>
         <updated>2019-07-17T14:05:08.000Z</updated>
         <content type="html"><![CDATA[<p>有时想写些简单的小玩意放到网上分享给朋友，却苦于不懂后端代码、不想碰数据库、没钱买服务器？那么这里有几个免费便捷的在线JSON存储服务可以帮到你：</p>
@@ -37,8 +37,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[如何优雅的用Animate CC制作SVG交互动画]]></title>
-        <id>https://wavef.cn/post/create-interactive-svg-animation-with-animate-cc</id>
-        <link href="https://wavef.cn/post/create-interactive-svg-animation-with-animate-cc">
+        <id>http://wavef.cn/post/create-interactive-svg-animation-with-animate-cc</id>
+        <link href="http://wavef.cn/post/create-interactive-svg-animation-with-animate-cc">
         </link>
         <updated>2019-07-16T14:15:49.000Z</updated>
         <content type="html"><![CDATA[<p>最近Lottie又借助阿里的<a href="https://design.alipay.com/emotion">犸良</a>火了一把，其实可交互的svg方案有很多，lottie作为一个跨平台的解决方案确实是个不错的选择，但是如果只是做个简单的小动画，其实Flash（Animate CC）完全可以胜任，而且做起来还很简单。</p>
@@ -54,9 +54,9 @@
 <p>个人推荐第一个，点击Install然后选择zxp安装包即可，哪怕软件没出现在列表里好像也能安装成功，而第二个是Adobe官方推荐的，成功率在我这里只有20%……命令行工具只能算是最后的抢救了。</p>
 <h1 id="案例">案例</h1>
 <p>正好要做一只猫趴在登录窗口里，用户输入账户名时，小猫的眼睛会盯着光标移动，用户输入密码时，小猫会用手捂住眼睛，而小猫的尾巴则会一直甩一直甩~</p>
-<p><img src="https://wavef.cn/post-images/1563289300793.gif" alt="小趴猫"></p>
-<p><img src="https://wavef.cn/post-images/1563289913508.gif" alt="小猫盯着"></p>
-<p><img src="https://wavef.cn/post-images/1563289925021.gif" alt="小猫捂脸"></p>
+<p><img src="http://wavef.cn/post-images/1563289300793.gif" alt="小趴猫"></p>
+<p><img src="http://wavef.cn/post-images/1563289913508.gif" alt="小猫盯着"></p>
+<p><img src="http://wavef.cn/post-images/1563289925021.gif" alt="小猫捂脸"></p>
 <p>只需要把关键动作的动画做在元件内（影片剪辑/MovieClip），然后用代码控制帧的跳转即可，动画制作过程就不说了，懂的自然懂，不懂的可以搜索Flash动画基础教程，由于An只是Flash换了个名字的马甲，所以并没有什么Animate动画基础教程，都是炒Flash的冷饭！</p>
 <h1 id="代码">代码</h1>
 <p>为小猫的眼睛添加实例名：<code>eye1</code> 和 <code>eye2</code><br>
@@ -92,8 +92,8 @@ window.cat = {
     </entry>
     <entry>
         <title type="html"><![CDATA[制作AffinityDesigner的Iconfont资产库]]></title>
-        <id>https://wavef.cn/post/how-to-make-affinity-designers-iconfont-assets</id>
-        <link href="https://wavef.cn/post/how-to-make-affinity-designers-iconfont-assets">
+        <id>http://wavef.cn/post/how-to-make-affinity-designers-iconfont-assets</id>
+        <link href="http://wavef.cn/post/how-to-make-affinity-designers-iconfont-assets">
         </link>
         <updated>2019-07-16T01:47:58.000Z</updated>
         <content type="html"><![CDATA[<p>网上有很多免费或开源的字体图标资源，本可以很轻松的导入到AffinityDesigner（下称AD）里使用，无奈AD并不支持将嵌入式画板添加到资产库（Assets），且serif官方并没有为AD提供<strong>嵌入画板转图层</strong>的功能，所以还得把字体图标从AD导出为PDF或SVG，然后再导入回来成为单个矢量格式的图标集，再添加到资产库，但这个做法的硬伤就是无法保留图标名，这样制作出来的资产库也就无法在资产面板中检索。</p>
@@ -281,8 +281,8 @@ window.cat = {
     </entry>
     <entry>
         <title type="html"><![CDATA[企业微信群日报自动化]]></title>
-        <id>https://wavef.cn/post/auto-send-daily-report-to-wework</id>
-        <link href="https://wavef.cn/post/auto-send-daily-report-to-wework">
+        <id>http://wavef.cn/post/auto-send-daily-report-to-wework</id>
+        <link href="http://wavef.cn/post/auto-send-daily-report-to-wework">
         </link>
         <updated>2019-07-15T14:32:16.000Z</updated>
         <content type="html"><![CDATA[<p>公司要求每天在腾讯共享文档上写日报，还要求必须在企业微信群里再发一次，这种搬砖行为总是导致我回到公司打开休眠的电脑后，忘记重新登录企业微信而漏接消息，于是萌生了自动化转发的念头。</p>
