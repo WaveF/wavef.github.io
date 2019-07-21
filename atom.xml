@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://wavef.cn</id>
     <title>WaveF</title>
-    <updated>2019-07-21T14:03:08.248Z</updated>
+    <updated>2019-07-21T14:59:41.701Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://wavef.cn"/>
     <link rel="self" href="http://wavef.cn/atom.xml"/>
@@ -43,8 +43,54 @@ dojo.require(&quot;fwlib.io&quot;);
 <pre><code>console.log(response);
 </code></pre>
 <h1 id="jsonpen">JSONPEN</h1>
-<p>其实FWXHR已经足够简单，但为了配合在线Json存取的<a href="https://baike.baidu.com/item/CURD">CURD</a>操作，有必要再进行一层封装，于是就有了<a href="https://jsonpen.minicg.com">jsonpen</a>。</p>
+<p>其实FWXHR已经足够简单，但为了配合<a href="https://jsonpen.minicg.com">jsonpen</a>的<a href="https://baike.baidu.com/item/CURD">CURD</a>操作，有必要再进行一层封装。</p>
 <h2 id="服务端">服务端</h2>
+<h3 id="create创建">Create（创建）</h3>
+<p>通过<code>/create</code>创建新的数据，并返回可存取json的<code>id</code>，异同返回的还有一个名为<code>origin</code>的原始索引值，这个值只会在创建时显示一次，用于日后删除json数据，需要用户自行保存。</p>
+<h3 id="update更新">Update（更新）</h3>
+<p>通过<code>/update?&lt;json_id&gt;</code>更新json数据，实际上为了操作的简化（tōu lǎn）这里采用的是覆盖写入，最终会返回执行结果到客户端。</p>
+<h3 id="read读取">Read（读取）</h3>
+<p>通过<code>/read?&lt;json_id&gt;</code>读取json数据，并返回到客户端。</p>
+<h3 id="delete删除">Delete（删除）</h3>
+<p>通过<code>/delete?&lt;origin_id&gt;</code>删除json数据，并返回执行结果到客户端。</p>
+<h2 id="fireworks客户端">Fireworks（客户端）</h2>
+<p>为FWXHR的dojo模块新增一个<code>jsonpen()</code>函数，使用<code>new dojo.jsonpen()</code>使其实例化，可以使用其中对FWXHR进行二次封装的CURD方法。</p>
+<blockquote>
+<p> <br>
+<a href="https://github.com/WaveF/fwlib">获取相关插件/源码</a></p>
+</blockquote>
+<h3 id="setidpen_id">.setId(pen_id)</h3>
+<p>记住对json进行读写时所使用的id，这样就不用每次都作为参数传递了。</p>
+<h3 id="createcallback">.create(callback)</h3>
+<p>向服务器请求一个新的json数据仓位，通过回调（可选）获取仓位的id、origin以及执行结果。</p>
+<pre><code>jsonpen.create(function(res){console.log(res);});
+//{ id: &quot;&lt;pen_id&gt;&quot;, origin: &quot;&lt;origin_id&gt;&quot;, url: &quot;&lt;request_url&gt;&quot;, info: { responseText: &quot;&lt;response&gt;&quot;, status: 200, statusText: &quot;OK&quot; } }
+</code></pre>
+<h3 id="updatejson-callback">.update(json, callback)</h3>
+<p>将json数据存储到服务器上，在回调（可选）中可查看执行结果。</p>
+<pre><code>jsonpen.update(json, function(res){console.log(res);});
+//{ responseText: &quot;&lt;response&gt;&quot;, status: 200, statusText: &quot;OK&quot; }
+</code></pre>
+<h3 id="readcallback">.read(callback)</h3>
+<p>从服务器读取json数据，此处通过回调（必须）获取数据。</p>
+<pre><code>jsonpen.read(function(res){var data = dojo.fromJson(result.data); console.log(res, data);});
+//{ data: &quot;&lt;json&gt;&quot;, info: { responseText: &quot;&lt;response&gt;&quot;, status: 200, statusText: &quot;OK&quot; } }
+</code></pre>
+<h3 id="delorigin-callback">.del(origin, callback)</h3>
+<p>删除服务器上的json数据，origin是必填参数，同样回调（可选）用于查看执行结果的。</p>
+<pre><code>jsonpen.del(function(res){console.log(res);});
+//{ responseText: &quot;Data deleted successfully.&quot;, status: 200, statusText: &quot;OK&quot; }
+</code></pre>
+<h3 id="setfilefilepath">.setFile(filePath)</h3>
+<p>为了离线状态下也能存取本地备份的json数据，就增加了相关方法，这里和<code>setId()</code>的作用相仿，是用来记住本地json文件副本的路径的，方便后面的save和load，注意如果要将文件保存在某些敏感路径下的时候，需要以管理员身份运行Fireworks。</p>
+<h3 id="savejson">.save(json)</h3>
+<p>将json数据写入通过<code>setFile</code>指定路径下的文件。</p>
+<h3 id="load">.load()</h3>
+<p>从<code>setFile</code>指定的文件中读取json数据。</p>
+<h3 id="help">.help()</h3>
+<p>为了在Fireworks里方便查看说明文档而添加的方法，会以<code>alert</code>形式显示。</p>
+<h1 id="注意事项">注意事项</h1>
+<p>如果要在Fireworks的jsf脚本里使用中文汉字，那需要使用GB2312对这个jsf文件进行编码，否则存取json时会出现乱码。</p>
 ]]></content>
     </entry>
     <entry>
