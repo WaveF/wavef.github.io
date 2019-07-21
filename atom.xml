@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://wavef.cn</id>
     <title>WaveF</title>
-    <updated>2019-07-21T12:00:26.889Z</updated>
+    <updated>2019-07-21T12:09:10.491Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://wavef.cn"/>
     <link rel="self" href="http://wavef.cn/atom.xml"/>
@@ -16,7 +16,8 @@
         <link href="http://wavef.cn/post/jsonpen-for-fireworks">
         </link>
         <updated>2019-07-21T11:18:11.000Z</updated>
-        <content type="html"><![CDATA[<p>之前介绍过<a href="/post/frontend-json-storage-online">《纯前端的在线JSON存储服务》</a>，然后就尝试看看能不能在Fireworks里读取和写入数据，结果很遗憾，从<a href="https://www.jsonstore.io/">jsonstore.io</a>读数据是没有问题的，但写入时却报<strong>400 错误，Bad Request</strong>，进行了多次尝试后依旧无果，最后只能无疾而终，猜测问题可能是因为<a href="http://johndunning.com/fireworks/about/FWXHR">FWXHR</a>发送的数据格式不匹配所致。</p>
+        <content type="html"><![CDATA[<p>之前介绍过<a href="/post/frontend-json-storage-online">《纯前端的在线JSON存储服务》</a>，然后就尝试看能不能在Fireworks里读取和写入数据，结果很遗憾，从<a href="https://www.jsonstore.io/">jsonstore.io</a>等服务读数据是没有问题的，但写入时却报<strong>错误: 400，Bad Request</strong>，进行了多次尝试后依旧无果，最后只能放弃，猜测问题可能是因为<a href="http://johndunning.com/fireworks/about/FWXHR">FWXHR</a>发送的数据格式不匹配所致。</p>
+<p>Fireworks的未来由WaveF守护！秉着对Fireworks不离不弃的责任和态度，我又搬出了已经停掉的JsonPen.com网站源码，坚决要为Fireworks打通在线存取JSON功能，不要问我为什么，因为[Fireworks是世界上最好的UI软件<a href=""></a>](https://www.jianshu.com/p/eb171c98c5ea)！</p>
 ]]></content>
     </entry>
     <entry>
