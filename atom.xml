@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://wavef.cn</id>
     <title>WaveF</title>
-    <updated>2019-07-21T15:04:30.089Z</updated>
+    <updated>2019-07-24T17:30:38.081Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://wavef.cn"/>
     <link rel="self" href="http://wavef.cn/atom.xml"/>
@@ -10,6 +10,19 @@
     <logo>http://wavef.cn/images/avatar.png</logo>
     <icon>http://wavef.cn/favicon.ico</icon>
     <rights>All rights reserved 2019, WaveF</rights>
+    <entry>
+        <title type="html"><![CDATA[主题酱LOGO设计]]></title>
+        <id>http://wavef.cn/post/theme-girl-logo-design</id>
+        <link href="http://wavef.cn/post/theme-girl-logo-design">
+        </link>
+        <updated>2019-07-24T17:07:18.000Z</updated>
+        <content type="html"><![CDATA[<p>朋友要做个名为“主题酱”的壁纸小程序，于是请WaveF做了回灵魂画师（捂眼），首先这里要求的是呆萌女孩+宠物，第一时间想到的是 RAGNAROK BATTLE OFFLINE（俗称RBO、仙境传说格斗版）那种风格，当时就挺喜欢那种蠢萌蠢萌的角色。<br>
+<img src="http://wavef.cn/post-images/1563988785627.jpg" alt=""></p>
+<p>初定风格后开始下笔，感觉还是大眼睛比较有感觉，从来没正经学过手绘的我装模作样的在纸上画了起来，这里并没有什么中心思想，纯粹就是画着玩，毕竟这LOGO……不收钱！ ..T___T..<br>
+<img src="http://wavef.cn/post-images/1563988442908.jpg" alt=""></p>
+<p>没错，最后选的就是那个趴在被窝里的萌物，做了适当调整让她看起来至少有点LOGO的样子，嗯，就这样了。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Fireworks的JSON在线存取服务]]></title>
         <id>http://wavef.cn/post/jsonpen-for-fireworks</id>
