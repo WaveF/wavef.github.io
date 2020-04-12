@@ -2,32 +2,49 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://wavef.cn</id>
     <title>WaveF</title>
-    <updated>2019-08-20T15:07:49.288Z</updated>
+    <updated>2020-04-12T05:09:25.947Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://wavef.cn"/>
     <link rel="self" href="http://wavef.cn/atom.xml"/>
     <subtitle>A Desigrammer</subtitle>
     <logo>http://wavef.cn/images/avatar.png</logo>
     <icon>http://wavef.cn/favicon.ico</icon>
-    <rights>All rights reserved 2019, WaveF</rights>
+    <rights>All rights reserved 2020, WaveF</rights>
+    <entry>
+        <title type="html"><![CDATA[Axure组件 - 网页编辑器]]></title>
+        <id>http://wavef.cn/post/axurerp9-webview/</id>
+        <link href="http://wavef.cn/post/axurerp9-webview/">
+        </link>
+        <updated>2020-04-12T02:29:04.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="简介">简介</h1>
+<p>给 Axure 9.x 做了个网页编辑器，简单来讲就是在动态面板里添加了 HTML 和 JS 的文本输入框，让用户可以把网上搬砖得到的效果代码贴进来直接产生一个类似 <strong>webview</strong> 控件的效果。</p>
+<figure data-type="image" tabindex="1"><img src="http://wavef.cn/post-images/1586668040393.jpg" alt="" loading="lazy"></figure>
+<h1 id="关于">关于</h1>
+<p>说一下为什么做这玩意，Axure 其实从框架上来讲是基于 jquery 的，然后它还包含了一套自己封装过的简化版 jquery 方法，而 Axure 的动画和交互等基本都是构建在这个基础之上的，所以只要稍微会那么一丁点 Javascript 就能实现很多 Axure 本身想都不敢想的功能。</p>
+<p>再者，Axure 里通过拖放产生的交互在做简单东西的时候还是不错的，但更多情况下交互的逻辑比写代码还要复杂10000000倍！加上大多数 Axure 交流群里的网友问的几乎全是效果啊、动效啊之类的东西，而不像产品经理一样更关注业务流程，所以做一个简单的 <strong>webview</strong> 对于实现一些搬砖效果来讲还是挺方便的。</p>
+<h1 id="预览">预览</h1>
+<p>下面是Axure预览时看到的效果：<br>
+<img src="http://wavef.cn/post-images/1586663797102.gif" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[主题酱LOGO设计]]></title>
-        <id>http://wavef.cn/post/theme-girl-logo-design</id>
-        <link href="http://wavef.cn/post/theme-girl-logo-design">
+        <id>http://wavef.cn/post/theme-girl-logo-design/</id>
+        <link href="http://wavef.cn/post/theme-girl-logo-design/">
         </link>
         <updated>2019-07-24T17:07:18.000Z</updated>
         <content type="html"><![CDATA[<p>朋友要做个名为“主题酱”的壁纸小程序，于是请WaveF做了回灵魂画师（捂眼），首先这里要求的是呆萌女孩+宠物，第一时间想到的是 RAGNAROK BATTLE OFFLINE（俗称RBO、仙境传说格斗版）那种风格，当时就挺喜欢那种蠢萌蠢萌的角色。🐹<br>
-<img src="http://wavef.cn/post-images/1563988785627.jpg" alt=""></p>
+<img src="http://wavef.cn/post-images/1563988785627.jpg" alt="" loading="lazy"></p>
 <p>初定风格后开始下笔，感觉还是大眼睛比较有感觉，从来没正经学过手绘的我装模作样的在纸上画了起来，这里并没有什么中心思想，纯粹就是画着玩，毕竟这LOGO……不收钱！😭<br>
-<img src="http://wavef.cn/post-images/1563988442908.jpg" alt=""></p>
+<img src="http://wavef.cn/post-images/1563988442908.jpg" alt="" loading="lazy"></p>
 <p>没错，最后选的就是趴在被窝里的那位，做了适当调整现在看起来至少有点LOGO的样子。嗯、就这样了，大家可以去捧个场，然后帮忙催一下对方把WaveF那好几百万的账给结了~👏</p>
-<p><img src="http://wavef.cn/post-images/1564457184828.jpg" alt=""></p>
+<figure data-type="image" tabindex="1"><img src="http://wavef.cn/post-images/1564457184828.jpg" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Fireworks的JSON在线存取服务]]></title>
-        <id>http://wavef.cn/post/jsonpen-for-fireworks</id>
-        <link href="http://wavef.cn/post/jsonpen-for-fireworks">
+        <id>http://wavef.cn/post/jsonpen-for-fireworks/</id>
+        <link href="http://wavef.cn/post/jsonpen-for-fireworks/">
         </link>
         <updated>2019-07-21T11:18:11.000Z</updated>
         <content type="html"><![CDATA[<p>之前介绍过<a href="/post/frontend-json-storage-online">《纯前端的在线JSON存储服务》</a>，然后就尝试看能不能在Fireworks里读取和写入数据，结果很遗憾，从<a href="https://www.jsonstore.io/">jsonstore.io</a>等服务读数据是没有问题的，但写入时却报<strong>错误: 400，Bad Request</strong>，进行了多次尝试后依旧无果，最后只能放弃，猜测问题可能是因为<a href="http://johndunning.com/fireworks/about/FWXHR">FWXHR</a>发送的数据格式不匹配所致。</p>
@@ -109,8 +126,8 @@ dojo.require(&quot;fwlib.io&quot;);
     </entry>
     <entry>
         <title type="html"><![CDATA[纯前端的在线JSON存储服务]]></title>
-        <id>http://wavef.cn/post/frontend-json-storage-online</id>
-        <link href="http://wavef.cn/post/frontend-json-storage-online">
+        <id>http://wavef.cn/post/frontend-json-storage-online/</id>
+        <link href="http://wavef.cn/post/frontend-json-storage-online/">
         </link>
         <updated>2019-07-17T14:05:08.000Z</updated>
         <content type="html"><![CDATA[<p>有时想写些简单的小玩意放到网上分享给朋友，却苦于不懂后端代码、不想碰数据库、没钱买服务器？那么这里有几个免费便捷的在线JSON存储服务可以帮到你：</p>
@@ -134,8 +151,8 @@ dojo.require(&quot;fwlib.io&quot;);
     </entry>
     <entry>
         <title type="html"><![CDATA[如何优雅的用Animate CC制作SVG交互动画]]></title>
-        <id>http://wavef.cn/post/create-interactive-svg-animation-with-animate-cc</id>
-        <link href="http://wavef.cn/post/create-interactive-svg-animation-with-animate-cc">
+        <id>http://wavef.cn/post/create-interactive-svg-animation-with-animate-cc/</id>
+        <link href="http://wavef.cn/post/create-interactive-svg-animation-with-animate-cc/">
         </link>
         <updated>2019-07-16T14:15:49.000Z</updated>
         <content type="html"><![CDATA[<p>最近Lottie又借助阿里的<a href="https://design.alipay.com/emotion">犸良</a>火了一把，其实可交互的svg方案有很多，lottie作为一个跨平台的解决方案确实是个不错的选择，但是如果只是做个简单的小动画，其实Flash（Animate CC）完全可以胜任，而且做起来还很简单。</p>
@@ -151,9 +168,9 @@ dojo.require(&quot;fwlib.io&quot;);
 <p>个人推荐第一个，点击Install然后选择zxp安装包即可，哪怕软件没出现在列表里好像也能安装成功，而第二个是Adobe官方推荐的，成功率在我这里只有20%……命令行工具只能算是最后的抢救了。</p>
 <h1 id="案例">案例</h1>
 <p>正好要做一只猫趴在登录窗口里，用户输入账户名时，小猫的眼睛会盯着光标移动，用户输入密码时，小猫会用手捂住眼睛，而小猫的尾巴则会一直甩一直甩~</p>
-<p><img src="http://wavef.cn/post-images/1563289300793.gif" alt="小趴猫"></p>
-<p><img src="http://wavef.cn/post-images/1563289913508.gif" alt="小猫盯着"></p>
-<p><img src="http://wavef.cn/post-images/1563289925021.gif" alt="小猫捂脸"></p>
+<figure data-type="image" tabindex="1"><img src="http://wavef.cn/post-images/1563289300793.gif" alt="小趴猫" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="http://wavef.cn/post-images/1563289913508.gif" alt="小猫盯着" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="http://wavef.cn/post-images/1563289925021.gif" alt="小猫捂脸" loading="lazy"></figure>
 <p>只需要把关键动作的动画做在元件内（影片剪辑/MovieClip），然后用代码控制帧的跳转即可，动画制作过程就不说了，懂的自然懂，不懂的可以搜索Flash动画基础教程，由于An只是Flash换了个名字的马甲，所以并没有什么Animate动画基础教程，都是炒Flash的冷饭！</p>
 <h1 id="代码">代码</h1>
 <p>为小猫的眼睛添加实例名：<code>eye1</code> 和 <code>eye2</code><br>
@@ -189,8 +206,8 @@ window.cat = {
     </entry>
     <entry>
         <title type="html"><![CDATA[制作AffinityDesigner的Iconfont资产库]]></title>
-        <id>http://wavef.cn/post/how-to-make-affinity-designers-iconfont-assets</id>
-        <link href="http://wavef.cn/post/how-to-make-affinity-designers-iconfont-assets">
+        <id>http://wavef.cn/post/how-to-make-affinity-designers-iconfont-assets/</id>
+        <link href="http://wavef.cn/post/how-to-make-affinity-designers-iconfont-assets/">
         </link>
         <updated>2019-07-16T01:47:58.000Z</updated>
         <content type="html"><![CDATA[<p>网上有很多免费或开源的字体图标资源，本可以很轻松的导入到AffinityDesigner（下称AD）里使用，无奈AD并不支持将嵌入式画板添加到资产库（Assets），且serif官方并没有为AD提供<strong>嵌入画板转图层</strong>的功能，所以还得把字体图标从AD导出为PDF或SVG，然后再导入回来成为单个矢量格式的图标集，再添加到资产库，但这个做法的硬伤就是无法保留图标名，这样制作出来的资产库也就无法在资产面板中检索。</p>
@@ -378,8 +395,8 @@ window.cat = {
     </entry>
     <entry>
         <title type="html"><![CDATA[企业微信群日报自动化]]></title>
-        <id>http://wavef.cn/post/auto-send-daily-report-to-wework</id>
-        <link href="http://wavef.cn/post/auto-send-daily-report-to-wework">
+        <id>http://wavef.cn/post/auto-send-daily-report-to-wework/</id>
+        <link href="http://wavef.cn/post/auto-send-daily-report-to-wework/">
         </link>
         <updated>2019-07-15T14:32:16.000Z</updated>
         <content type="html"><![CDATA[<p>公司要求每天在腾讯共享文档上写日报，还要求必须在企业微信群里再发一次，这种搬砖行为总是导致我回到公司打开休眠的电脑后，忘记重新登录企业微信而漏接消息，于是萌生了自动化转发的念头。</p>
