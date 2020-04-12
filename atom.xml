@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://wavef.cn</id>
     <title>WaveF</title>
-    <updated>2020-04-12T16:43:54.765Z</updated>
+    <updated>2020-04-12T16:49:47.341Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://wavef.cn"/>
     <link rel="self" href="http://wavef.cn/atom.xml"/>
@@ -17,7 +17,8 @@
         </link>
         <updated>2020-04-12T11:02:50.000Z</updated>
         <content type="html"><![CDATA[<h1 id="简介">简介</h1>
-<p>只需要把图片一股脑放进动态面板的第1个状态里就行了，程序会根据图片的层级顺序去排列，点击预览即可看到效果，动态面板的第2个状态是用户配置界面。</p>
+<p>效果请看下面预览，只需要把图片一股脑放进动态面板的第1个状态里就行了，程序会根据图片的层级顺序去排列，点击预览即可看到效果，动态面板的第2个状态是用户配置界面。</p>
+<hr>
 <h1 id="关于">关于</h1>
 <p>群友问得最多的问题之一就是图片轮播了，其实普通的轮播用动态面板内置动作就能实现，但有人问起这种带点三维切换的…于是把基于 jquery.cloud9carousel 的组件封装了一层给 Axure 调用，其实这样玩 Axure 有点找回以前用 Flash 搞特效的感觉 😙</p>
 <hr>
