@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://wavef.cn</id>
     <title>WaveF</title>
-    <updated>2020-04-12T10:26:33.376Z</updated>
+    <updated>2020-04-12T10:30:12.708Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://wavef.cn"/>
     <link rel="self" href="http://wavef.cn/atom.xml"/>
@@ -10,15 +10,6 @@
     <logo>http://wavef.cn/images/avatar.png</logo>
     <icon>http://wavef.cn/favicon.ico</icon>
     <rights>All rights reserved 2020, WaveF</rights>
-    <entry>
-        <title type="html"><![CDATA[Axure组件 - 环形轮播图]]></title>
-        <id>http://wavef.cn/post/axure-zu-jian-huan-xing-lun-bo-tu/</id>
-        <link href="http://wavef.cn/post/axure-zu-jian-huan-xing-lun-bo-tu/">
-        </link>
-        <updated>2020-04-12T09:58:41.000Z</updated>
-        <content type="html"><![CDATA[<p>把基于 jquery.cloud9carousel 的组件封装了一层给 Axure 调用，只需要把图片一股脑放进动态面板的第一个状态里就行了，程序会根据图片的层级顺序去排列，而动态面板的第二个状态则是用户配置界面。</p>
-]]></content>
-    </entry>
     <entry>
         <title type="html"><![CDATA[Axure组件 - 网页编辑器]]></title>
         <id>http://wavef.cn/post/axurerp9-webview/</id>
