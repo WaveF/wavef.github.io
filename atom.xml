@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://wavef.cn</id>
     <title>WaveF</title>
-    <updated>2020-04-12T05:09:25.947Z</updated>
+    <updated>2020-04-12T05:18:32.978Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://wavef.cn"/>
     <link rel="self" href="http://wavef.cn/atom.xml"/>
@@ -25,6 +25,12 @@
 <h1 id="预览">预览</h1>
 <p>下面是Axure预览时看到的效果：<br>
 <img src="http://wavef.cn/post-images/1586663797102.gif" alt="" loading="lazy"></p>
+<h1 id="下载">下载</h1>
+<p><strong>注意：如果你愿意给作者买颗糖，可以选择付费购买，如果你想持续获得更多稀奇古怪又好玩的Axure脚本类组件，可以加群免费下载</strong></p>
+<ul>
+<li><a href="https://uitool.cn/assets/axure_webeditor_v2">网盘下载（售价￥1.0）</a></li>
+<li><a href="https://jq.qq.com/?_wv=1027&amp;k=5tRAN2L">加群获取（免费）</a></li>
+</ul>
 ]]></content>
     </entry>
     <entry>
