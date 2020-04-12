@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>纯前端的在线JSON存储服务 | WaveF</title>
+<title>Axure组件 - 网页编辑器 | WaveF</title>
 <meta name="description" content="A Desigrammer" />
 <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
 <link rel="shortcut icon" href="http://wavef.cn/favicon.ico?v=1586689600634">
@@ -93,59 +93,54 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              纯前端的在线JSON存储服务
+              Axure组件 - 网页编辑器
             </h2>
             <div class="post-info">
               <span>
-                2019-07-17
+                2020-04-12
               </span>
               <span>
                 2 min read
               </span>
               
-                <a href="http://wavef.cn/tag/KNnstRVTQ/" class="post-tag">
-                  # jsonstore
-                </a>
-              
-                <a href="http://wavef.cn/tag/SZNM_XVG3C/" class="post-tag">
-                  # json
-                </a>
-              
-                <a href="http://wavef.cn/tag/-vN7dIxIj/" class="post-tag">
-                  # jsonbin
-                </a>
-              
-                <a href="http://wavef.cn/tag/aMIbDB0Jd2/" class="post-tag">
-                  # myjson
+                <a href="http://wavef.cn/tag/NVBEAjlTL/" class="post-tag">
+                  # axure
                 </a>
               
             </div>
             
-              <img class="post-feature-image" src="http://wavef.cn/post-images/frontend-json-storage-online.jpg" alt="">
+              <img class="post-feature-image" src="http://wavef.cn/post-images/axurerp9-webview.jpg" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>有时想写些简单的小玩意放到网上分享给朋友，却苦于不懂后端代码、不想碰数据库、没钱买服务器？那么这里有几个免费便捷的在线JSON存储服务可以帮到你：</p>
+                <h1 id="简介">简介</h1>
+<p>给 Axure 9.x 做了个网页编辑器，简单来讲就是在动态面板里添加了 HTML 和 JS 的文本输入框，让用户可以把网上搬砖得到的效果代码贴进来直接产生一个类似 <strong>webview</strong> 控件的效果。</p>
+<figure data-type="image" tabindex="1"><img src="http://wavef.cn/post-images/1586668040393.jpg" alt="" loading="lazy"></figure>
+<hr>
+<h1 id="关于">关于</h1>
+<p>说一下为什么做这玩意，Axure 其实从框架上来讲是基于 jquery 的，然后它还包含了一套自己封装过的简化版 jquery 方法，而 Axure 的动画和交互等基本都是构建在这个基础之上的，所以只要稍微会那么一丁点 Javascript 就能实现很多 Axure 本身想都不敢想的功能。</p>
+<p>再者，Axure 里通过拖放产生的交互在做简单东西的时候还是不错的，但更多情况下交互的逻辑比写代码还要复杂10000000倍！加上大多数 Axure 交流群里的网友问的几乎全是效果啊、动效啊之类的东西，而不像产品经理一样更关注业务流程，所以做一个简单的 <strong>webview</strong> 对于实现一些搬砖效果来讲还是挺方便的。</p>
+<hr>
+<h1 id="预览">预览</h1>
+<p>下面是Axure预览时看到的效果：<br>
+<img src="http://wavef.cn/post-images/1586663797102.gif" alt="" loading="lazy"></p>
+<hr>
+<h1 id="下载">下载</h1>
+<p><strong>注意：如果你愿意给作者买颗糖，可以选择付费购买，如果你想持续获得更多稀奇古怪又好玩的Axure脚本类组件，可以加群免费下载</strong></p>
 <ul>
-<li><a href="https://jsonbin.io">JSONbin.io</a></li>
-<li><a href="https://www.jsonstore.io">JsonStore.io</a></li>
-<li><a href="http://myjson.com">Myjson.com</a></li>
-<li><a href="https://jsonstorage.net">JsonStorage.net</a></li>
+<li><a href="https://uitool.cn/assets/axure_webeditor_v2">网盘下载（售价￥1.0）</a></li>
+<li><a href="https://jq.qq.com/?_wv=1027&amp;k=5tRAN2L">加群获取（免费）</a></li>
 </ul>
-<p>其实之前我也自己尝试用PHP边查边写了个叫JsonPen的网站，后来才发现原来国外早已经实现了，于是果断弃坑，毕竟我压根不想学PHP……</p>
-<p>上面介绍的那些服务里<strong>Myjson</strong>和<strong>JsonStorage</strong>比较简陋，有点不知道哪天突然就会挂掉的赶脚……<strong>JSONbin</strong>是四款里唯一需要注册后才能创建json的，支持版本管理和secret-key验证、可创建公有和私有json（话说我一直没弄明白这私有的json安全怎么保障）、比较完善的说明文档、还有付费增加请求次数的增值服务……<strong>jsonstore</strong>同样免费，并且无需登录就能使用，也很方便👏</p>
-<p>📝<em>Talk is cheap, show me the code:</em></p>
-<ul>
-<li><a href="https://codepen.io/WaveF/full/dxbedb">JsonBin 范例</a></li>
-<li><a href="https://codepen.io/WaveF/full/XvrqoO">JsonStore 范例</a></li>
-<li><a href="https://codepen.io/WaveF/full/MdZLYK">MyJson 范例</a></li>
-<li><a href="https://codepen.io/WaveF/full/aeoKGN">JsonStorage 范例</a></li>
-</ul>
-<p>以上是我在<a href="https://codepen.io">CodePen</a>用JQuery码的几个样本，别问我为什么2019还在用JQ，因为菜呗~ 😘</p>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E5%85%B3%E4%BA%8E">关于</a></li>
+<li><a href="#%E9%A2%84%E8%A7%88">预览</a></li>
+<li><a href="#%E4%B8%8B%E8%BD%BD">下载</a></li>
+</ul>
+
               </div>
             </div>
           </article>
@@ -154,9 +149,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="http://wavef.cn/post/create-interactive-svg-animation-with-animate-cc/">
+            <a href="http://wavef.cn/post/theme-girl-logo-design/">
               <h3 class="post-title">
-                如何优雅的用Animate CC制作SVG交互动画
+                主题酱LOGO设计
               </h3>
             </a>
           </div>
