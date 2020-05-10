@@ -5,7 +5,7 @@
 <title>Axure秘笈 - 你绝对不知道的技巧 | WaveF</title>
 <meta name="description" content="A Desigrammer" />
 <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
-<link rel="shortcut icon" href="http://wavef.cn/favicon.ico?v=1589125593178">
+<link rel="shortcut icon" href="http://wavef.cn/favicon.ico?v=1589126050981">
 <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.7.2/css/all.min.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.bootcss.com/KaTeX/0.10.2/katex.min.css">
 <link rel="stylesheet" href="http://wavef.cn/styles/main.css">
@@ -30,7 +30,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="http://wavef.cn">
-  <img class="avatar" src="http://wavef.cn/images/avatar.png?v=1589125593178" alt="">
+  <img class="avatar" src="http://wavef.cn/images/avatar.png?v=1589126050981" alt="">
   </a>
   <h1 class="site-title">
     WaveF
@@ -144,14 +144,14 @@
 </ol>
 <hr>
 <h2 id="灯箱效果的背景模糊">灯箱效果的背景模糊</h2>
-<p>按照 <code>往子页面注入代码的方法</code>，写入如下代码：</p>
+<p>按照 <strong><a href="#%E5%BE%80%E5%AD%90%E9%A1%B5%E9%9D%A2%E6%B3%A8%E5%85%A5%E4%BB%A3%E7%A0%81%E7%9A%84%E6%96%B9%E6%B3%95">往子页面注入代码的方法</a></strong>，写入如下代码：</p>
 <pre><code class="language-css">}div[id$='_lightbox']{position: fixed !important; opacity: 1 !important; background-color: rgba(0,0,0,0.5) !important; backdrop-filter:blur(5px);
 </code></pre>
 <hr>
 <h2 id="任意矩形下的背景模糊">任意矩形下的背景模糊</h2>
 <ul>
 <li>为矩形设置一个样式，并把样式名称改为 <code>aero</code></li>
-<li>按照 <code>灯箱效果的背景模糊</code>，把代码修改为：<pre><code class="language-css"> }div[id$='_lightbox'], .aero{position: fixed !important; opacity: 1 !important; background-color: rgba(0,0,0,0.5) !important; backdrop-filter:blur(5px);
+<li>按照  <strong><a href="#%E7%81%AF%E7%AE%B1%E6%95%88%E6%9E%9C%E7%9A%84%E8%83%8C%E6%99%AF%E6%A8%A1%E7%B3%8A">灯箱效果的背景模糊</a></strong>，把代码修改为：<pre><code class="language-css"> }div[id$='_lightbox'], .aero{position: fixed !important; opacity: 1 !important; background-color: rgba(0,0,0,0.5) !important; backdrop-filter:blur(5px);
 </code></pre>
 </li>
 </ul>
@@ -160,7 +160,7 @@
 <p>通过模板内的含有文字的矩形来接收参数，在模板内根据接收到的参数动态改变元素的样式等，如果不希望母版的“覆盖”功能出现非必要的选项，可以用文本框来替代矩形，但记得要将文本框的“只读”打开。</p>
 <hr>
 <h2 id="创建美观的自定义组件">创建美观的自定义组件</h2>
-<p>用动态面板的<code>状态1</code>来存放表现组件外观的元件，在<code>状态2</code>放入代码可以跟踪到的文本框，用于配置参数，即可实现外观和使用上较为人性化的组件。<br>
+<p>用动态面板的 <code>状态1</code> 来存放表现组件外观的元件，在 <code>状态2</code> 放入代码可以跟踪到的文本框，用于配置参数，即可实现外观和使用上较为人性化的组件。<br>
 注：惯常做法是通过中继器来配置参数，但中继器的可视尺寸有限，很多人不会用。</p>
 <hr>
 <h2 id="js获取用户在中继器里配置的参数">JS获取用户在中继器里配置的参数</h2>
@@ -197,6 +197,16 @@
 }
 </code></pre>
 <hr>
+<h2 id="自动生成axure网页标注给前端">自动生成Axure网页标注给前端</h2>
+<p>按照 <strong><a href="#%E5%BE%80%E5%AD%90%E9%A1%B5%E9%9D%A2%E6%B3%A8%E5%85%A5%E4%BB%A3%E7%A0%81%E7%9A%84%E6%96%B9%E6%B3%95">往子页面注入代码的方法</a></strong>，写入如下代码：</p>
+<pre><code class="language-html">}&lt;/style&gt;
+&lt;script src=&quot;https://wavef.gitee.io/axure_measure/axure-measure.js&quot;&gt;&lt;/script&gt;
+&lt;style&gt;*{
+</code></pre>
+<p>注：这个JS被我改过样式，应该会好看些，如果要用原版，可以把链接改为：</p>
+<pre><code>https://cdn.jsdelivr.net/npm/axure-redline-tool@latest/web/axure-redline-plugin.js
+</code></pre>
+<hr>
 <blockquote>
 <p>待续...</p>
 </blockquote>
@@ -216,6 +226,7 @@
 <li><a href="#js%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E5%9C%A8%E4%B8%AD%E7%BB%A7%E5%99%A8%E9%87%8C%E9%85%8D%E7%BD%AE%E7%9A%84%E5%8F%82%E6%95%B0">JS获取用户在中继器里配置的参数</a></li>
 <li><a href="#js%E8%8E%B7%E5%8F%96axure%E7%9A%84%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F">JS获取Axure的全局变量</a></li>
 <li><a href="#%E6%9C%AC%E5%9C%B0%E9%80%9A%E8%BF%87%E5%8F%8C%E5%87%BB%E8%BF%90%E8%A1%8Caxure%E5%8F%91%E5%B8%83%E7%9A%84html%E6%96%87%E4%BB%B6%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD%E4%BB%A3%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95">本地通过双击运行axure发布的html文件，无法加载代码的解决方法</a></li>
+<li><a href="#%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90axure%E7%BD%91%E9%A1%B5%E6%A0%87%E6%B3%A8%E7%BB%99%E5%89%8D%E7%AB%AF">自动生成Axure网页标注给前端</a></li>
 </ul>
 </li>
 </ul>

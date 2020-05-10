@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://wavef.cn</id>
     <title>WaveF</title>
-    <updated>2020-05-10T15:46:41.580Z</updated>
+    <updated>2020-05-10T15:54:19.670Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://wavef.cn"/>
     <link rel="self" href="http://wavef.cn/atom.xml"/>
@@ -47,14 +47,14 @@
 </ol>
 <hr>
 <h2 id="灯箱效果的背景模糊">灯箱效果的背景模糊</h2>
-<p>按照 <code>往子页面注入代码的方法</code>，写入如下代码：</p>
+<p>按照 <strong><a href="#%E5%BE%80%E5%AD%90%E9%A1%B5%E9%9D%A2%E6%B3%A8%E5%85%A5%E4%BB%A3%E7%A0%81%E7%9A%84%E6%96%B9%E6%B3%95">往子页面注入代码的方法</a></strong>，写入如下代码：</p>
 <pre><code class="language-css">}div[id$='_lightbox']{position: fixed !important; opacity: 1 !important; background-color: rgba(0,0,0,0.5) !important; backdrop-filter:blur(5px);
 </code></pre>
 <hr>
 <h2 id="任意矩形下的背景模糊">任意矩形下的背景模糊</h2>
 <ul>
 <li>为矩形设置一个样式，并把样式名称改为 <code>aero</code></li>
-<li>按照 <code>灯箱效果的背景模糊</code>，把代码修改为：<pre><code class="language-css"> }div[id$='_lightbox'], .aero{position: fixed !important; opacity: 1 !important; background-color: rgba(0,0,0,0.5) !important; backdrop-filter:blur(5px);
+<li>按照  <strong><a href="#%E7%81%AF%E7%AE%B1%E6%95%88%E6%9E%9C%E7%9A%84%E8%83%8C%E6%99%AF%E6%A8%A1%E7%B3%8A">灯箱效果的背景模糊</a></strong>，把代码修改为：<pre><code class="language-css"> }div[id$='_lightbox'], .aero{position: fixed !important; opacity: 1 !important; background-color: rgba(0,0,0,0.5) !important; backdrop-filter:blur(5px);
 </code></pre>
 </li>
 </ul>
@@ -63,7 +63,7 @@
 <p>通过模板内的含有文字的矩形来接收参数，在模板内根据接收到的参数动态改变元素的样式等，如果不希望母版的“覆盖”功能出现非必要的选项，可以用文本框来替代矩形，但记得要将文本框的“只读”打开。</p>
 <hr>
 <h2 id="创建美观的自定义组件">创建美观的自定义组件</h2>
-<p>用动态面板的<code>状态1</code>来存放表现组件外观的元件，在<code>状态2</code>放入代码可以跟踪到的文本框，用于配置参数，即可实现外观和使用上较为人性化的组件。<br>
+<p>用动态面板的 <code>状态1</code> 来存放表现组件外观的元件，在 <code>状态2</code> 放入代码可以跟踪到的文本框，用于配置参数，即可实现外观和使用上较为人性化的组件。<br>
 注：惯常做法是通过中继器来配置参数，但中继器的可视尺寸有限，很多人不会用。</p>
 <hr>
 <h2 id="js获取用户在中继器里配置的参数">JS获取用户在中继器里配置的参数</h2>
@@ -98,6 +98,16 @@
     document.querySelector('head').appendChild(js);
     js.onload = callback;
 }
+</code></pre>
+<hr>
+<h2 id="自动生成axure网页标注给前端">自动生成Axure网页标注给前端</h2>
+<p>按照 <strong><a href="#%E5%BE%80%E5%AD%90%E9%A1%B5%E9%9D%A2%E6%B3%A8%E5%85%A5%E4%BB%A3%E7%A0%81%E7%9A%84%E6%96%B9%E6%B3%95">往子页面注入代码的方法</a></strong>，写入如下代码：</p>
+<pre><code class="language-html">}&lt;/style&gt;
+&lt;script src=&quot;https://wavef.gitee.io/axure_measure/axure-measure.js&quot;&gt;&lt;/script&gt;
+&lt;style&gt;*{
+</code></pre>
+<p>注：这个JS被我改过样式，应该会好看些，如果要用原版，可以把链接改为：</p>
+<pre><code>https://cdn.jsdelivr.net/npm/axure-redline-tool@latest/web/axure-redline-plugin.js
 </code></pre>
 <hr>
 <blockquote>
