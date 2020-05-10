@@ -307,7 +307,7 @@ dojo.require(&quot;fwlib.io&quot;);
         nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
       }
       // console.log('section.offsetHeight', section.offsetHeight);
-      if (section.offsetTop-25 <= fromTop) {
+      if (section.offsetTop <= fromTop) {
         if (nextSection) {
           if (nextSection.offsetTop > fromTop) {
             link.classList.add("current");
