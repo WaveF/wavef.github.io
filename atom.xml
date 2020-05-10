@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://wavef.cn</id>
     <title>WaveF</title>
-    <updated>2020-05-10T15:39:15.195Z</updated>
+    <updated>2020-05-10T15:46:41.580Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://wavef.cn"/>
     <link rel="self" href="http://wavef.cn/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>http://wavef.cn/favicon.ico</icon>
     <rights>All rights reserved 2020, WaveF</rights>
     <entry>
-        <title type="html"><![CDATA[关于 Axure 你绝对不知道的技巧]]></title>
+        <title type="html"><![CDATA[Axure秘笈 - 你绝对不知道的技巧]]></title>
         <id>http://wavef.cn/post/axure-tricks/</id>
         <link href="http://wavef.cn/post/axure-tricks/">
         </link>
@@ -46,12 +46,12 @@
 </li>
 </ol>
 <hr>
-<h3 id="灯箱效果的背景模糊">灯箱效果的背景模糊</h3>
+<h2 id="灯箱效果的背景模糊">灯箱效果的背景模糊</h2>
 <p>按照 <code>往子页面注入代码的方法</code>，写入如下代码：</p>
 <pre><code class="language-css">}div[id$='_lightbox']{position: fixed !important; opacity: 1 !important; background-color: rgba(0,0,0,0.5) !important; backdrop-filter:blur(5px);
 </code></pre>
 <hr>
-<h3 id="任意矩形下的背景模糊">任意矩形下的背景模糊</h3>
+<h2 id="任意矩形下的背景模糊">任意矩形下的背景模糊</h2>
 <ul>
 <li>为矩形设置一个样式，并把样式名称改为 <code>aero</code></li>
 <li>按照 <code>灯箱效果的背景模糊</code>，把代码修改为：<pre><code class="language-css"> }div[id$='_lightbox'], .aero{position: fixed !important; opacity: 1 !important; background-color: rgba(0,0,0,0.5) !important; backdrop-filter:blur(5px);
@@ -59,14 +59,14 @@
 </li>
 </ul>
 <hr>
-<h3 id="创建可配置的百变母版">创建可配置的百变母版</h3>
+<h2 id="创建可配置的百变母版">创建可配置的百变母版</h2>
 <p>通过模板内的含有文字的矩形来接收参数，在模板内根据接收到的参数动态改变元素的样式等，如果不希望母版的“覆盖”功能出现非必要的选项，可以用文本框来替代矩形，但记得要将文本框的“只读”打开。</p>
 <hr>
-<h3 id="创建美观的自定义组件">创建美观的自定义组件</h3>
+<h2 id="创建美观的自定义组件">创建美观的自定义组件</h2>
 <p>用动态面板的<code>状态1</code>来存放表现组件外观的元件，在<code>状态2</code>放入代码可以跟踪到的文本框，用于配置参数，即可实现外观和使用上较为人性化的组件。<br>
 注：惯常做法是通过中继器来配置参数，但中继器的可视尺寸有限，很多人不会用。</p>
 <hr>
-<h3 id="js获取用户在中继器里配置的参数">JS获取用户在中继器里配置的参数</h3>
+<h2 id="js获取用户在中继器里配置的参数">JS获取用户在中继器里配置的参数</h2>
 <pre><code class="language-javascript">function getRepeaterData(repeaterId) {
     var repeater;
     $axure(function (obj) {
@@ -81,7 +81,7 @@
 }
 </code></pre>
 <hr>
-<h3 id="js获取axure的全局变量">JS获取Axure的全局变量</h3>
+<h2 id="js获取axure的全局变量">JS获取Axure的全局变量</h2>
 <pre><code class="language-javascript">$axure.internal(function ($ax) {
     $ax.public.getGlobalVariable = $ax.getGlobalVariable = function (name) {
         return $ax.globalVariableProvider.getVariableValue(name);
@@ -89,7 +89,7 @@
 });
 </code></pre>
 <hr>
-<h3 id="本地通过双击运行axure发布的html文件无法加载代码的解决方法">本地通过双击运行axure发布的html文件，无法加载代码的解决方法</h3>
+<h2 id="本地通过双击运行axure发布的html文件无法加载代码的解决方法">本地通过双击运行axure发布的html文件，无法加载代码的解决方法</h2>
 <p>如果是通过 <code>$axure.utils.loadJS('your_js_file_url');</code> 加载的，会出现ajax请求，这时候由于安全限制浏览器是无法用这种方法加载js的，这个时候只能用原生写法来插入外部JS文件，并通过回调判断加载是否完成：</p>
 <pre><code class="language-javascript">function insertJS(url, callback) {
     var js = document.createElement('script');
