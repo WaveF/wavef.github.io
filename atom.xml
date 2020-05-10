@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://wavef.cn</id>
     <title>WaveF</title>
-    <updated>2020-05-10T15:59:14.814Z</updated>
+    <updated>2020-05-10T16:03:59.953Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://wavef.cn"/>
     <link rel="self" href="http://wavef.cn/atom.xml"/>
@@ -63,8 +63,8 @@
 <p>通过模板内的含有文字的矩形来接收参数，在模板内根据接收到的参数动态改变元素的样式等，如果不希望母版的“覆盖”功能出现非必要的选项，可以用文本框来替代矩形，但记得要将文本框的“只读”打开。</p>
 <hr>
 <h2 id="创建美观的自定义组件">创建美观的自定义组件</h2>
-<p>用动态面板的 <code>状态1</code> 来存放表现组件外观的元件，在 <code>状态2</code> 放入代码可以跟踪到的文本框，用于配置参数，即可实现外观和使用上较为人性化的组件。<br>
-注：惯常做法是通过中继器来配置参数，但中继器的可视尺寸有限，很多人不会用。</p>
+<p>用动态面板的 <code>状态1</code> 来存放表现组件外观的元件，在 <code>状态2</code> 放入代码可以跟踪到的文本框，用于配置参数，即可实现外观和使用上较为人性化的组件，具体可参考此案例：<a href="https://item.taobao.com/item.htm?spm=a1z10.1-c-s.w4004-7440536123.1.84fe9dd0MRkEnQ&amp;id=616419964900">传送门</a></p>
+<p>注：惯常做法是通过中继器来配置参数，但中继器的可视尺寸有限，很多人不会用。</p>
 <hr>
 <h2 id="js获取用户在中继器里配置的参数">JS获取用户在中继器里配置的参数</h2>
 <pre><code class="language-javascript">function getRepeaterData(repeaterId) {
