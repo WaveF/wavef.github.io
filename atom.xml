@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://wavef.cn</id>
     <title>WaveF</title>
-    <updated>2020-05-10T16:34:11.882Z</updated>
+    <updated>2020-06-01T04:31:22.116Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://wavef.cn"/>
     <link rel="self" href="http://wavef.cn/atom.xml"/>
@@ -10,6 +10,53 @@
     <logo>http://wavef.cn/images/avatar.png</logo>
     <icon>http://wavef.cn/favicon.ico</icon>
     <rights>All rights reserved 2020, WaveF</rights>
+    <entry>
+        <title type="html"><![CDATA[Cinema 4D 导出 GLTF 动画到 Three.js 引擎]]></title>
+        <id>http://wavef.cn/post/c4d-gltf-animation-to-web-3d/</id>
+        <link href="http://wavef.cn/post/c4d-gltf-animation-to-web-3d/">
+        </link>
+        <updated>2020-06-01T01:22:38.000Z</updated>
+        <content type="html"><![CDATA[<ol>
+<li>参考 <a href="https://www.youtube.com/user/eyedesyn">eyedesyn</a> 频道，基于 <strong>Joint</strong> 和 <strong>Pose Mogph</strong> 制作关键帧动画：</li>
+</ol>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/I2_DyWbLruQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<ol start="2">
+<li>
+<p>R20/R21 下载并安装 https://labs.maxon.net/?p=3360 里官方的 GLTF Exporter（R22 已内置）</p>
+</li>
+<li>
+<p>导出 gltf/glb 格式，设置如下：<br>
+<img src="http://wavef.cn/post-images/1590985611962.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>创建html，代码如下</p>
+</li>
+</ol>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;C4D - Aframe&lt;/title&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/aframe@1.0.4/dist/aframe-master.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;a-scene background=&quot;color: #eee&quot;&gt;
+        &lt;a-assets&gt;
+            &lt;a-asset-item id=&quot;model&quot; src=&quot;./model/my_model.glb&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;/a-assets&gt;
+        &lt;a-entity rotation=&quot;10 0 0&quot;&gt;
+            &lt;!-- &lt;a-entity gltf-model=&quot;#model&quot; scale=&quot;1 1 1&quot; animation=&quot;property: rotation; to: 0 360 0; dur: 2000; easing: linear; loop: true&quot;&gt;&lt;/a-entity&gt; --&gt;
+            &lt;a-entity gltf-model=&quot;#model&quot; scale=&quot;1 1 1&quot; animation-mixer=&quot;loop: pingpong&quot;&gt;&lt;/a-entity&gt;
+        &lt;/a-entity&gt;
+        &lt;a-entity camera look-controls wasd-controls position=&quot;0 0 5&quot;&gt;&lt;/a-entity&gt;
+    &lt;/a-scene&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Axure秘笈 - 你绝对不知道的技巧]]></title>
         <id>http://wavef.cn/post/axure-tricks/</id>

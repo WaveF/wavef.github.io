@@ -1,8 +1,8 @@
 <html>
   <head>
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>iconfont | WaveF</title>
+<title>Cinema 4D 导出 GLTF 动画到 Three.js 引擎 | WaveF</title>
 <meta name="description" content="A Desigrammer" />
 <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
 <link rel="shortcut icon" href="http://wavef.cn/favicon.ico?v=1590985864630">
@@ -90,61 +90,111 @@
   </div>
 </div>
 
-        <div class="current-tag-container">
-            <h2 class="title">
-                标签：# iconfont
-            </h2> 
-        </div>
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="http://wavef.cn/post/how-to-make-affinity-designers-iconfont-assets/">
-        <h2 class="post-title">制作AffinityDesigner的Iconfont资产库</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-07-16
-        </span>
-        <span>
-          6 min read
-        </span>
-        
-          <a href="http://wavef.cn/tag/jL0VGUcao/" class="post-tag">
-            # affinity designer
-          </a>
-        
-          <a href="http://wavef.cn/tag/-5Sfz7u5Qv/" class="post-tag">
-            # fireworks
-          </a>
-        
-          <a href="http://wavef.cn/tag/vISkeEoosY/" class="post-tag">
-            # scripting
-          </a>
-        
-          <a href="http://wavef.cn/tag/atKhxsAqoV/" class="post-tag">
-            # iconfont
-          </a>
-        
-          <a href="http://wavef.cn/tag/K-Rlm_DXCj/" class="post-tag">
-            # assets
-          </a>
-        
-      </div>
-      
-        <a href="http://wavef.cn/post/how-to-make-affinity-designers-iconfont-assets/" class="post-feature-image" style="background-image: url('http://wavef.cn/post-images/how-to-make-affinity-designers-iconfont-assets.jpg')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-</div>
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Cinema 4D 导出 GLTF 动画到 Three.js 引擎
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-06-01
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="http://wavef.cn/post-images/c4d-gltf-animation-to-web-3d.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <ol>
+<li>参考 <a href="https://www.youtube.com/user/eyedesyn">eyedesyn</a> 频道，基于 <strong>Joint</strong> 和 <strong>Pose Mogph</strong> 制作关键帧动画：</li>
+</ol>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/I2_DyWbLruQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<ol start="2">
+<li>
+<p>R20/R21 下载并安装 https://labs.maxon.net/?p=3360 里官方的 GLTF Exporter（R22 已内置）</p>
+</li>
+<li>
+<p>导出 gltf/glb 格式，设置如下：<br>
+<img src="http://wavef.cn/post-images/1590985611962.jpg" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>创建html，代码如下</p>
+</li>
+</ol>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;C4D - Aframe&lt;/title&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/aframe@1.0.4/dist/aframe-master.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;a-scene background=&quot;color: #eee&quot;&gt;
+        &lt;a-assets&gt;
+            &lt;a-asset-item id=&quot;model&quot; src=&quot;./model/my_model.glb&quot;&gt;&lt;/a-asset-item&gt;
+        &lt;/a-assets&gt;
+        &lt;a-entity rotation=&quot;10 0 0&quot;&gt;
+            &lt;!-- &lt;a-entity gltf-model=&quot;#model&quot; scale=&quot;1 1 1&quot; animation=&quot;property: rotation; to: 0 360 0; dur: 2000; easing: linear; loop: true&quot;&gt;&lt;/a-entity&gt; --&gt;
+            &lt;a-entity gltf-model=&quot;#model&quot; scale=&quot;1 1 1&quot; animation-mixer=&quot;loop: pingpong&quot;&gt;&lt;/a-entity&gt;
+        &lt;/a-entity&gt;
+        &lt;a-entity camera look-controls wasd-controls position=&quot;0 0 5&quot;&gt;&lt;/a-entity&gt;
+    &lt;/a-scene&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
-        <div class="pagination-container">
-  
-  
-</div>
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="http://wavef.cn/post/axure-tricks/">
+              <h3 class="post-title">
+                Axure秘笈 - 你绝对不知道的技巧
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+<script src="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '21b01f7d9293bda6ddba',
+    clientSecret: '0e57ee43791d7689c1e9d3f260bb8042fba91587',
+    repo: 'wavef.github.io',
+    owner: 'wavef',
+    admin: ['wavef'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
 
         <div class="site-footer">
   ©2019&nbsp;<a href="https://minicg.com" target="_blank">miniCG.com</a> | 
