@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://wavef.cn</id>
     <title>WaveF</title>
-    <updated>2020-06-01T04:31:22.116Z</updated>
+    <updated>2020-06-01T04:47:39.444Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://wavef.cn"/>
     <link rel="self" href="http://wavef.cn/atom.xml"/>
@@ -19,7 +19,7 @@
         <content type="html"><![CDATA[<ol>
 <li>参考 <a href="https://www.youtube.com/user/eyedesyn">eyedesyn</a> 频道，基于 <strong>Joint</strong> 和 <strong>Pose Mogph</strong> 制作关键帧动画：</li>
 </ol>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/I2_DyWbLruQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" styler="display:block; margin:0 auto;" src="https://www.youtube.com/embed/I2_DyWbLruQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <ol start="2">
 <li>
 <p>R20/R21 下载并安装 https://labs.maxon.net/?p=3360 里官方的 GLTF Exporter（R22 已内置）</p>
