@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://wavef.cn</id>
     <title>WaveF</title>
-    <updated>2020-06-01T06:06:59.250Z</updated>
+    <updated>2020-06-12T10:10:37.247Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://wavef.cn"/>
     <link rel="self" href="http://wavef.cn/atom.xml"/>
@@ -10,6 +10,25 @@
     <logo>http://wavef.cn/images/avatar.png</logo>
     <icon>http://wavef.cn/favicon.ico</icon>
     <rights>All rights reserved 2020, WaveF</rights>
+    <entry>
+        <title type="html"><![CDATA[blender脑残粉遭遇战]]></title>
+        <id>http://wavef.cn/post/blender-nc-fans/</id>
+        <link href="http://wavef.cn/post/blender-nc-fans/">
+        </link>
+        <updated>2020-06-12T09:38:07.000Z</updated>
+        <content type="html"><![CDATA[<p>最近 Affinity 群里乱入了两名 blender 用户，这个群主要是用来交流 Affinity Designer、Photo和Publisher 的一些使用经验和资源的，这两位哥们儿一开始就在群里发自己跟着教程做的一些 blender 案例，其实我有时也会在群里发一下 AD 怎么处理三维软件的导出图，加上最近 Blender 2.8 出来之后也是火的一塌糊涂，我也在尝试着了解一下这个开源软件。</p>
+<p>这一切看上去都没什么问题，慢慢的他们不断在群里“高谈阔论”，就是看不起其他三维软件什么的，其实从他们过往发的一些截图或者动图来看，说实话能力挺一般的，年少轻狂嘛，谁没有过呢。直到一个做UI的妹子问了一个C4D的问题，这俩哥们就兴致勃勃起来了，言语中充满着轻蔑和不懈，说什么要学就学主流的三维软件、学Blender晋升空间更大、还说什么C4D不支持粒子，自己还是用AE做出来的（这不是拐着弯在赞美自己还会AE做粒子效果么）。大哥，人家是学UI的，C4D无疑比Blender更容易上手好吧。再说了，工具用到极致那都是神仙打架，轮得到你们这些新手在这评头论足吗，于是我点出了C4D是有ThinkingParticles的，然后其中一个哥们马上改口说是XP时代的C4D，我去，你们咋不说恐龙时代呢，Cinema 4D雏形初现的时候（1989）Blender（1994）还在TM娘胎里吧，不好意思冲动了，我对Blender没太大意见，只是遇到这种脑残粉无脑黑真是气不打一出来。</p>
+<p>现在有很多菜鸟，“识少少扮代表”（粤语，指会点皮毛就充大神），从各个维度藐视别人，经常在群里发桌面截图，里面除了Adobe全家桶图标之外还有一大堆乱七八糟的行业软件，好像在说：你们看，我会那么多软件，我多厉害啊！恶心死了，你跟他们讲道理，他们就跟你扯歪理，还说得头头是道，烦死啦！没法沟通直接把这俩哥们请走了，我不希望好好的一个交流群充满了这种氛围。</p>
+<p>人的认知曲线是山丘状的：</p>
+<ul>
+<li>当你什么都不会时，你会觉得自己很弱，别人都是大神；</li>
+<li>当你懂了一点皮毛，你就会觉得自己无所不能，眼里看别人都是垃圾，过度高估自己的能力；</li>
+<li>当你深入学习后，开始找到了自己的定位和触碰到自己的瓶颈，你会知道真正的大神是怎样的，你会觊觎那深不见底的能力却处处碰壁，你觉得自己也就这样了，这时你会低估了自己的能力；</li>
+</ul>
+<p>当你目空一切的时候，你可能处于上面的第二种阶段</p>
+<p>炫技可以，但请保持一颗谦卑之心，时刻记住天外有天，人外有人</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Cinema 4D 导出 GLTF 动画到 Three.js 引擎]]></title>
         <id>http://wavef.cn/post/c4d-gltf-animation-to-web-3d/</id>
@@ -575,154 +594,6 @@ window.cat = {
 <p>由于是采用读取文件名来为图层命名的方式来操作，所以这里没法保证文件名和图标是绝对一一对应的，这里必须要求图标名能够按照A-Z自然排序，最大限度确保不会出现偏差。</p>
 <h1 id="其他">其他</h1>
 <p>我用这个方法把开源的<a href="https://www.minicg.com/index.php/assets/382.html">Remix字体图标</a>转成了AD的资产库，发布在<a href="https://minicg.com">miniCG.com</a>上，<a href="http://www.minicg.com/index.php/fw">Fw的相关资源</a>也能在这里找到。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[企业微信群日报自动化]]></title>
-        <id>http://wavef.cn/post/auto-send-daily-report-to-wework/</id>
-        <link href="http://wavef.cn/post/auto-send-daily-report-to-wework/">
-        </link>
-        <updated>2019-07-15T14:32:16.000Z</updated>
-        <content type="html"><![CDATA[<p>公司要求每天在腾讯共享文档上写日报，还要求必须在企业微信群里再发一次，这种搬砖行为总是导致我回到公司打开休眠的电脑后，忘记重新登录企业微信而漏接消息，于是萌生了自动化转发的念头。</p>
-<h1 id="思路">思路</h1>
-<p>用puppeteer进行模拟操作，用request通知机器人发送消息，用node-schedule定时运行node脚本。</p>
-<h1 id="难点">难点</h1>
-<ol>
-<li>腾讯文档内容区域是canvas，无法抓取内容，但可以通过键盘将焦点移动到目标表格上，然后通过id获得输入栏的内容（这个是DOM元素），这样就可以取得目标表格的值了。</li>
-<li>用QQ帐号和密码虽然可以全自动登录，可是当频繁登录时一旦出现安全异常提示，就会一直卡在登录界面，就算扫码也无法进入，后来改为微信扫码登录解决，微信扫码可以频繁登录不报错。</li>
-<li>为了不频繁登录，需要把流程分为两部分，第一部分是微信扫码登录进入腾讯文档（只需初次执行脚本时扫一次即可），第二部分则是定时循环执行：获取日报内容。注意期间不能关闭虚拟浏览器，否则又要重新扫码……当然也可以多建一个机器人把登录二维码截屏发到另一个群里，每次用最新的码登录。</li>
-<li>CentOS里运行puppeteer还需要安装很多其他软件，这个需要自行google，而且虚拟浏览器里还会由于缺少中文字体而无法正常显示，想省事就找台Win服务器去跑吧……</li>
-</ol>
-<h1 id="核心代码">核心代码</h1>
-<h2 id="登录腾讯文档">登录腾讯文档</h2>
-<pre><code>async function autoReport() {
-    const browser = await puppeteer.launch({ headless: !debug; });
-    const page = await browser.newPage();
-    await page.setViewport({ width: 1200, height: 800 });
-
-    await console.log('- 打开文档链接');
-    await page.goto(docURL);
-
-    await console.log('- 点击立即登录');
-    await page.click('#blankpage-button-pc');
-    await page.waitFor(delay);
-    
-    await console.log('- 点击登录');
-    const wechatButton = await page.$('#wechat-tabs-title');
-    await wechatButton.click();
-    await page.waitFor(delay);
-
-    await page.screenshot({
-        path: './assets/wechat.png',
-        fullPage: true
-    });
-    await exec('start &quot;C:\\Program Files\\Honeyview\\Honeyview.exe&quot; &quot;assets\\wechat.png&quot;');
-    await prompt(&quot;- 等待微信扫码，回车继续...&quot;);
-
-    await page.waitForSelector('#padeditor');
-    // await page.waitForNavigation();
-    // await page.waitForNavigation({ waitUntil: &quot;networkidle2&quot; });
-    await console.log('- 成功进入表格');
-    
-		await console.log('- 计划任务待命...');
-		// 周一到周五每天晚上20:00执行
-		await schedule.scheduleJob('0 0 20 * * 1-5', () =&gt; {
-				takeAction(page);
-		}
-};
-</code></pre>
-<h2 id="获取表格内容">获取表格内容</h2>
-<pre><code>async function takeAction(page) {
-    await console.log(`\n----- ${getDate()}, 星期${day} -----`);
-
-    await console.log('- 切换表');
-    await page.mouse.move(weekTab[weekId], 780);
-    await page.mouse.down();
-    await page.mouse.up();
-    await page.waitFor(delay);
-
-    await console.log('- 全选表');
-    await page.mouse.move(20, 140);
-    await page.mouse.down();
-    await page.mouse.up();
-    await page.waitFor(delay);
-
-    // 表格焦点下移次数
-    for (let i = 0; i &lt; floor; i++) {
-        await console.log('- 键盘：下');
-        await page.keyboard.press('ArrowDown');
-        await page.waitFor(200);
-    }
-
-    // 表格焦点右移次数（因为有人名栏，所以要多移动一次）
-    for (let i = 0; i &lt; day + 1; i++) {
-        await console.log('- 键盘：右');
-        await page.keyboard.press('ArrowRight');
-        await page.waitFor(200);
-    }
-
-    const element = await page.$(&quot;#alloy-simple-text-editor&quot;);
-    let text = await page.evaluate(element =&gt; element.textContent, element);
-
-    if (text.indexOf('未完成') != -1 || text === '') {
-        await console.log('当前位置未发现日报!');
-    } else {
-        let tasks = await text.split(sp);
-            tasks = await tasks.filter(n =&gt; {
-                return n;
-            });
-
-            tasks = await tasks.map((val, idx) =&gt; {
-                if (val[0] === ' ') {
-                    return val.replace(' ', '');
-                } else {
-                    return val;
-                }
-            });
-
-        await console.log(tasks);
-        await page.waitFor(delay*10);
-				await sendArticle({
-						title: `${name}, ${getDate()}`,
-						desc : tasks.join('\n'),
-						link : docURL,
-						image: cover,
-						robot: robotURL
-				});
-    }
-}
-</code></pre>
-<h2 id="机器人发图文消息">机器人发图文消息</h2>
-<pre><code>function sendArticle(arg) {
-    var robot = arg.robot || '';
-    var data = {
-        &quot;msgtype&quot;: &quot;news&quot;,
-        &quot;news&quot;: {
-            &quot;articles&quot;: [{
-                &quot;title&quot;: arg.title || '标题',
-                &quot;description&quot;: arg.desc || '描述',
-                &quot;url&quot;: arg.link || '链接',
-                &quot;picurl&quot;: arg.image || '图片'
-            }]
-        }
-    };
-
-    var options = {
-        uri: robot,
-        method: 'POST',
-        headers: {
-            &quot;content-type&quot;: &quot;application/json&quot;
-        },
-        json: data
-    };
-
-    request(options, function (error, response, body) {
-        if (!error &amp;&amp; response.statusCode == 200) {
-            // console.log(response);
-        }
-    });
-}
-</code></pre>
 ]]></content>
     </entry>
 </feed>
