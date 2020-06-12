@@ -1,8 +1,8 @@
 <html>
   <head>
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>axure | WaveF</title>
+<title>三维盒子包装DEMO | WaveF</title>
 <meta name="description" content="A Desigrammer" />
 <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
 <link rel="shortcut icon" href="http://wavef.cn/favicon.ico?v=1591958871875">
@@ -90,97 +90,78 @@
   </div>
 </div>
 
-        <div class="current-tag-container">
-            <h2 class="title">
-                标签：# axure
-            </h2> 
-        </div>
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="http://wavef.cn/post/axure-tricks/">
-        <h2 class="post-title">Axure秘笈 - 你绝对不知道的技巧</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2020-05-10
-        </span>
-        <span>
-          4 min read
-        </span>
-        
-          <a href="http://wavef.cn/tag/NVBEAjlTL/" class="post-tag">
-            # axure
-          </a>
-        
-      </div>
-      
-        <a href="http://wavef.cn/post/axure-tricks/" class="post-feature-image" style="background-image: url('http://wavef.cn/post-images/axure-tricks.jpg')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="http://wavef.cn/post/axure-carousel/">
-        <h2 class="post-title">Axure组件 - 环形幻灯片</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2020-04-12
-        </span>
-        <span>
-          1 min read
-        </span>
-        
-          <a href="http://wavef.cn/tag/NVBEAjlTL/" class="post-tag">
-            # axure
-          </a>
-        
-      </div>
-      
-        <a href="http://wavef.cn/post/axure-carousel/" class="post-feature-image" style="background-image: url('http://wavef.cn/post-images/axure-carousel.jpg')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-    <article class="post">
-      <a href="http://wavef.cn/post/axure-webview/">
-        <h2 class="post-title">Axure组件 - 网页编辑器</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2020-04-12
-        </span>
-        <span>
-          2 min read
-        </span>
-        
-          <a href="http://wavef.cn/tag/NVBEAjlTL/" class="post-tag">
-            # axure
-          </a>
-        
-      </div>
-      
-        <a href="http://wavef.cn/post/axure-webview/" class="post-feature-image" style="background-image: url('http://wavef.cn/post-images/axurerp9-webview.jpg')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-</div>
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              三维盒子包装DEMO
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-06-12
+              </span>
+              <span>
+                1 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="http://wavef.cn/post-images/box3d-demo.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>好久没碰Aframe了，我记得最早是从0.4.0开始的吧，那时候用这个给脉动写了个蹩脚的VR小游戏，因为人手不足，所以效果也不是很理想，但那是我第一次真正用这个框架搭出一个VR环境来，感触挺深的。</p>
+<p>最近在群里看到有人发做三维盒子包装的单子，是要做成工具的，工具我可做不来，但是手痒了，自己捣鼓了一个小demo，最早是用GLTF和单一贴图，动画是在三维软件里做好的骨架动画，但是后来发现 animation-mixer 好像不能精确控制动画播放位置（如果有知道的朋友麻烦告知一声啊，谢谢），最多只能切换动画和<a href="https://github.com/donmccurdy/aframe-extras/issues/303">倒放</a>，所以改为用分离的平面来实现，于是就有了下面这个东东：</p>
+<hr>
+<iframe border="0" width="800px" height="600px" src="https://minicg.com/demo/box3d/"></iframe>
+<hr>
+<p>很好玩吧，不过目前的切图还是分离的，不是很完美。</p>
 
-        <div class="pagination-container">
-  
-  
-</div>
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="http://wavef.cn/post/blender-nc-fans/">
+              <h3 class="post-title">
+                blender脑残粉遭遇战
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+<script src="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '21b01f7d9293bda6ddba',
+    clientSecret: '0e57ee43791d7689c1e9d3f260bb8042fba91587',
+    repo: 'wavef.github.io',
+    owner: 'wavef',
+    admin: ['wavef'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
 
         <div class="site-footer">
   ©2019&nbsp;<a href="https://minicg.com" target="_blank">miniCG.com</a> | 
