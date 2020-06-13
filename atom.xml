@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://wavef.cn</id>
     <title>WaveF</title>
-    <updated>2020-06-13T04:13:25.239Z</updated>
+    <updated>2020-06-13T04:16:18.239Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://wavef.cn"/>
     <link rel="self" href="http://wavef.cn/atom.xml"/>
@@ -21,7 +21,7 @@
 <hr>
 <iframe border="0" width="688px" height="520px" src="https://minicg.com/demo/box3d/"></iframe>
 <hr>
-<p>很好玩吧，不过目前的切图还是分离的，不是很完美。</p>
+<p>很好玩吧，不过目前的切图还是分离的，不是很完美，如果把模型构造、尺寸和折叠动画进行JSON参数化，允许用户自定义，也可以在后台配置新模型，那其实就可以作为一个简版SAAS工具了。</p>
 ]]></content>
     </entry>
     <entry>
