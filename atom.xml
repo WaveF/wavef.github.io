@@ -1,59 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://wavef.cn</id>
+    <id>http://localhost:4000</id>
     <title>WaveF</title>
-    <updated>2020-06-13T04:23:01.108Z</updated>
+    <updated>2020-11-16T01:47:31.286Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://wavef.cn"/>
-    <link rel="self" href="http://wavef.cn/atom.xml"/>
+    <link rel="alternate" href="http://localhost:4000"/>
+    <link rel="self" href="http://localhost:4000/atom.xml"/>
     <subtitle>A Desigrammer</subtitle>
-    <logo>http://wavef.cn/images/avatar.png</logo>
-    <icon>http://wavef.cn/favicon.ico</icon>
+    <logo>http://localhost:4000/images/avatar.png</logo>
+    <icon>http://localhost:4000/favicon.ico</icon>
     <rights>All rights reserved 2020, WaveF</rights>
     <entry>
+        <title type="html"><![CDATA[宝塔PM2运行Node脚本]]></title>
+        <id>http://localhost:4000/post/bt-pm2-run-node-script/</id>
+        <link href="http://localhost:4000/post/bt-pm2-run-node-script/">
+        </link>
+        <updated>2020-11-03T01:53:44.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="问题">问题</h1>
+<p>宝塔面板内的 PM2（图形界面）启动以下脚本后端口显示为OFF且服务不断重启直至关闭</p>
+<pre><code class="language-javascript">// app.js
+const express = require('express')
+const app = express()
+app.use('/home', (req, res)=&gt;{ res.send('home') })
+app.listen(3000, ()=&gt;{ console.log('server is running!') })
+</code></pre>
+<h1 id="解决思路">解决思路</h1>
+<p>网上搜索发现貌似是宝塔的 PM2 图形界面问题，使用 SSH 启动服务即可</p>
+<h1 id="操作步骤">操作步骤</h1>
+<ol>
+<li>确保阿里云ECS安全策略中放行目标端口，宝塔安全设置中允许放行目标端口；</li>
+<li>确保宝塔安装的 PM2 可正常显示 Node 版本，如不能，卸载 PM2 并重装，然后在 PM2 中安装 express，清除 PM2 中现有任务；</li>
+<li>宝塔安装“Linux工具箱”，运行后在「系统密码」中设置 SSH 的账号（默认为root）和密码；</li>
+<li>使用终端运行命令<code>ssh -p 22 root@domain</code>（domain替换为域名或ip），然后输入密码登入SSH；</li>
+<li>使用<code>cd</code>命令进入目标脚本目录，执行<code>npm i express --save</code>安装express，<br>
+然后运行命令<code>node app.js</code>，确认能正常运行后按<code>Ctrl+C</code>停止应用；</li>
+<li>回到宝塔的 PM2 界面，添加脚本所在目录及启动的JS文件和任务名，点击启动，可以看到端口已经不再显示为OFF且正常运行不重启，如果不行，在SSH执行<code>pm2 kill</code>清空一下原有任务后再进行此步骤；</li>
+</ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[VSCode 保存时自动激活 Cocos Creator 刷新网页]]></title>
+        <id>http://localhost:4000/post/vscode-cocoscreator-auto-refresh/</id>
+        <link href="http://localhost:4000/post/vscode-cocoscreator-auto-refresh/">
+        </link>
+        <updated>2020-11-02T04:08:00.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="思路">思路</h2>
+<p>每次保存 JS 文件后自动切换到 Cocos Creator 触发刷新机制，然后再切换回 VSCode 继续编辑，如果只有单屏，也可以增加“切换到浏览器”观察结果。</p>
+<h2 id="实现">实现</h2>
+<ol>
+<li>
+<p>运行 VSCode 搜索并安装 Run on Save (MEDIUS) 扩展，然后按 F1 执行 Run on Save: Enable</p>
+</li>
+<li>
+<p>对扩展进行以下配置（修改为你的程序路径，Win同）：</p>
+</li>
+</ol>
+<pre><code class="language-javascript:">  &quot;medius.runonsave&quot;: {
+    &quot;commands&quot;: [
+      {
+        &quot;match&quot;: &quot;\\.js$&quot;,
+        &quot;isAsync&quot;: false,
+        &quot;cmd&quot;: &quot;open /Applications/CocosCreator/Creator/2.4.3/CocosCreator.app &amp;&amp; sleep 0.2 &amp;&amp; open '/Applications/Visual Studio Code.app'&quot;
+      }
+    ]
+  }
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[三维盒子包装DEMO]]></title>
-        <id>http://wavef.cn/post/box3d-demo/</id>
-        <link href="http://wavef.cn/post/box3d-demo/">
+        <id>http://localhost:4000/post/box3d-demo/</id>
+        <link href="http://localhost:4000/post/box3d-demo/">
         </link>
         <updated>2020-06-12T10:11:13.000Z</updated>
-        <content type="html"><![CDATA[<p>好久没碰Aframe了，我记得最早是从0.4.0开始的吧，那时候接了个单子，用这个给某饮品公司写了个蹩脚的VR小游戏，因为人手不足，所以效果也不是很理想，但那是我第一次真正用这个框架搭出一个VR环境来，感触挺深的，用来入门threejs是个不错的选择。</p>
-<hr>
+        <content type="html"><![CDATA[<p>好久没碰Aframe了，我记得最早是从0.4.0开始的吧，那时候用这个给脉动写了个蹩脚的VR小游戏，因为人手不足，所以效果也不是很理想，但那是我第一次真正用这个框架搭出一个VR环境来，感触挺深的。</p>
 <p>最近在群里看到有人发做三维盒子包装的单子，是要做成工具的，工具我可做不来，但是手痒了，自己捣鼓了一个小demo，最早是用GLTF和单一贴图，动画是在三维软件里做好的骨架动画，但是后来发现 animation-mixer 好像不能精确控制动画播放位置（如果有知道的朋友麻烦告知一声啊，谢谢），最多只能切换动画和<a href="https://github.com/donmccurdy/aframe-extras/issues/303">倒放</a>，所以改为用分离的平面来实现，于是就有了下面这个东东：</p>
 <hr>
-<iframe border="0" width="688px" height="520px" src="https://minicg.com/demo/box3d/"></iframe>
+<iframe border="0" width="800px" height="600px" src="https://minicg.com/demo/box3d/"></iframe>
 <hr>
-<p>很好玩吧，不过目前的切图还是分离的，不是很完美，如果把模型构造、尺寸和折叠动画进行JSON参数化，允许用户自定义，也可以在后台配置新模型，那其实就可以作为一个简版SAAS工具了。</p>
+<p>很好玩吧，不过目前的切图还是分离的，不是很完美。</p>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[blender脑残粉遭遇战]]></title>
-        <id>http://wavef.cn/post/blender-nc-fans/</id>
-        <link href="http://wavef.cn/post/blender-nc-fans/">
+        <id>http://localhost:4000/post/blender-nc-fans/</id>
+        <link href="http://localhost:4000/post/blender-nc-fans/">
         </link>
         <updated>2020-06-12T09:38:07.000Z</updated>
         <content type="html"><![CDATA[<p>最近 Affinity 群里乱入了两名 blender 用户，这个群主要是用来交流 Affinity Designer、Photo和Publisher 的一些使用经验和资源的，这两位哥们儿一开始就在群里发自己跟着教程做的一些 blender 案例，其实我有时也会在群里发一下 AD 怎么处理三维软件的导出图，加上最近 Blender 2.8 出来之后也是火的一塌糊涂，我也在尝试着了解一下这个开源软件。</p>
-<hr>
-<p>这一切看上去都没什么问题，慢慢的他们不断在群里“高谈阔论”，就是看不起其他三维软件什么的，其实从他们过往发的一些截图或者动图来看，说实话能力挺一般的，年少轻狂嘛，谁没有过呢。直到一个做UI的妹子问了一个C4D的问题，这俩哥们就兴致勃勃起来了，言语中充满着轻蔑和不懈，说什么要学就学主流的三维软件、学Blender晋升空间更大、还说什么C4D不支持粒子，自己得用AE才能配合做出来（这不是拐着弯在赞美自己还会AE做粒子效果么），总之就是各种看不起，各种调侃。大哥，人家是学UI的，C4D无疑比Blender更容易上手好吧，你咋不劝人家学Maya呢。再说了，工具用到极致那都是神仙打架，轮得到你们这些新手在这评头论足吗，于是我指出C4D是有Thinking Particles的，然后其中一个哥们马上改口说自己讲的是XP时代、再扯到C4D多么不济雕刻连ZBrush都比不上、建模跟犀牛比就是垃圾，我去，你们家blender最牛逼好了吧，遇到这种脑残粉无脑黑真是气不打一出来。</p>
-<hr>
-<p>现在有很多菜鸟“识少少扮代表”（粤语，指会点皮毛就充大神），从各个维度藐视别人，经常在群里发桌面截图，里面除了Adobe全家桶图标之外还有一大堆乱七八糟的行业软件，好像在说：你们看，我会那么多软件，我多厉害啊！恶心死了，你跟他们讲道理，他们就跟你扯歪理，还说得头头是道，烦死啦！没法沟通直接把这俩哥们请走了，我不希望本来好好的一个交流群充满了这种氛围。</p>
-<hr>
-<p>以上纯粹对人不对事，blender 还是一个好软件，可能是由于最近宣传得有点猛，让一小撮不自量力的人又看到了吹嘘自己的机会。这种事很多，譬如刚毕业的的新手因为自己懂一点点“世界最强P图软件Photoshop”就嘲笑用Affinity的设计师，自己却连一些Ps基础操作没搞清楚。软件只是实现创作的一个工具，当然这里面有关于使用体验的设计，可能一些工具做某一类事情更有效率，但如果你只是一知半解就敢去嘲讽老鸟，那就跟这一切都无关了，纯粹是不自量力自我感觉良好而已。</p>
-<hr>
+<p>这一切看上去都没什么问题，慢慢的他们不断在群里“高谈阔论”，就是看不起其他三维软件什么的，其实从他们过往发的一些截图或者动图来看，说实话能力挺一般的，年少轻狂嘛，谁没有过呢。直到一个做UI的妹子问了一个C4D的问题，这俩哥们就兴致勃勃起来了，言语中充满着轻蔑和不懈，说什么要学就学主流的三维软件、学Blender晋升空间更大、还说什么C4D不支持粒子，自己还是用AE做出来的（这不是拐着弯在赞美自己还会AE做粒子效果么）。大哥，人家是学UI的，C4D无疑比Blender更容易上手好吧。再说了，工具用到极致那都是神仙打架，轮得到你们这些新手在这评头论足吗，于是我点出了C4D是有ThinkingParticles的，然后其中一个哥们马上改口说自己讲的是XP时代，我去，你们咋不说恐龙时代呢，遇到这种脑残粉无脑黑真是气不打一出来。</p>
+<p>现在有很多菜鸟“识少少扮代表”（粤语，指会点皮毛就充大神），从各个维度藐视别人，经常在群里发桌面截图，里面除了Adobe全家桶图标之外还有一大堆乱七八糟的行业软件，好像在说：你们看，我会那么多软件，我多厉害啊！恶心死了，你跟他们讲道理，他们就跟你扯歪理，还说得头头是道，烦死啦！没法沟通直接把这俩哥们请走了，我不希望好好的一个交流群充满了这种氛围。</p>
 <p>人的认知曲线是山丘状的：</p>
 <ul>
 <li>当你什么都不会时，你会觉得自己很弱，别人都是大神；</li>
-<li>当你懂了一点皮毛，你就会觉得自己无所不能，眼里看别人都是垃圾，你会过度高估自己的能力；</li>
-<li>当你有了一定实力后，开始找到了自己的定位和触碰到自己的瓶颈，你会知道真正的大神是怎样的，你会觊觎他们那深不见底的能力，你也会处处碰壁，这时你反而会低估了自己的能力；</li>
+<li>当你懂了一点皮毛，你就会觉得自己无所不能，眼里看别人都是垃圾，过度高估自己的能力；</li>
+<li>当你深入学习后，开始找到了自己的定位和触碰到自己的瓶颈，你会知道真正的大神是怎样的，你会觊觎那深不见底的能力却处处碰壁，你觉得自己也就这样了，这时你会低估了自己的能力；</li>
 </ul>
-<hr>
-<p><strong>当你目空一切的时候，你正好处于上述的第二种阶段。</strong><br>
-<strong>炫技可以，但请保持一颗谦卑之心，应该时刻记住：天外有天、人外有人。</strong></p>
+<p>当你目空一切的时候，你可能处于上面的第二种阶段</p>
+<p>炫技可以，但请保持一颗谦卑之心，时刻记住天外有天，人外有人</p>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Cinema 4D 导出 GLTF 动画到 Three.js 引擎]]></title>
-        <id>http://wavef.cn/post/c4d-gltf-animation-to-web-3d/</id>
-        <link href="http://wavef.cn/post/c4d-gltf-animation-to-web-3d/">
+        <id>http://localhost:4000/post/c4d-gltf-animation-to-web-3d/</id>
+        <link href="http://localhost:4000/post/c4d-gltf-animation-to-web-3d/">
         </link>
         <updated>2020-06-01T01:22:38.000Z</updated>
         <content type="html"><![CDATA[<ol>
@@ -67,7 +117,7 @@
 <hr>
 <ol start="3">
 <li>导出 gltf/glb 格式，设置如下：<br>
-<img src="http://wavef.cn/post-images/1590985611962.jpg" alt="" loading="lazy"></li>
+<img src="http://localhost:4000/post-images/1590985611962.jpg" alt="" loading="lazy"></li>
 </ol>
 <hr>
 <ol start="4">
@@ -100,8 +150,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Axure秘笈 - 你绝对不知道的技巧]]></title>
-        <id>http://wavef.cn/post/axure-tricks/</id>
-        <link href="http://wavef.cn/post/axure-tricks/">
+        <id>http://localhost:4000/post/axure-tricks/</id>
+        <link href="http://localhost:4000/post/axure-tricks/">
         </link>
         <updated>2020-05-10T14:41:54.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
@@ -205,8 +255,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Axure组件 - 环形幻灯片]]></title>
-        <id>http://wavef.cn/post/axure-carousel/</id>
-        <link href="http://wavef.cn/post/axure-carousel/">
+        <id>http://localhost:4000/post/axure-carousel/</id>
+        <link href="http://localhost:4000/post/axure-carousel/">
         </link>
         <updated>2020-04-12T11:02:50.000Z</updated>
         <content type="html"><![CDATA[<h1 id="简介">简介</h1>
@@ -216,8 +266,8 @@
 <p>群友问得最多的问题之一就是图片轮播了，其实普通的轮播用动态面板内置动作就能实现，但有人问起这种带点三维切换的…于是把基于 jquery.cloud9carousel 的组件封装了一层给 Axure 调用，其实这样玩 Axure 有点找回以前用 Flash 搞特效的感觉 😙</p>
 <hr>
 <h1 id="预览">预览</h1>
-<p><img src="http://wavef.cn/post-images/1586686864045.gif" alt="" loading="lazy"><br>
-<img src="http://wavef.cn/post-images/1586686903749.jpg" alt="" loading="lazy"></p>
+<p><img src="http://localhost:4000/post-images/1586686864045.gif" alt="" loading="lazy"><br>
+<img src="http://localhost:4000/post-images/1586686903749.jpg" alt="" loading="lazy"></p>
 <hr>
 <h1 id="下载">下载</h1>
 <ul>
@@ -227,13 +277,13 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Axure组件 - 网页编辑器]]></title>
-        <id>http://wavef.cn/post/axure-webview/</id>
-        <link href="http://wavef.cn/post/axure-webview/">
+        <id>http://localhost:4000/post/axure-webview/</id>
+        <link href="http://localhost:4000/post/axure-webview/">
         </link>
         <updated>2020-04-12T02:29:04.000Z</updated>
         <content type="html"><![CDATA[<h1 id="简介">简介</h1>
 <p>给 Axure 9.x 做了个网页编辑器，简单来讲就是在动态面板里添加了 HTML 和 JS 的文本输入框，让用户可以把网上搬砖得到的效果代码贴进来直接产生一个类似 <strong>webview</strong> 控件的效果。</p>
-<figure data-type="image" tabindex="1"><img src="http://wavef.cn/post-images/1586668040393.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="http://localhost:4000/post-images/1586668040393.jpg" alt="" loading="lazy"></figure>
 <hr>
 <h1 id="关于">关于</h1>
 <p>说一下为什么做这玩意，Axure 其实从框架上来讲是基于 jquery 的，然后它还包含了一套自己封装过的简化版 jquery 方法，而 Axure 的动画和交互等基本都是构建在这个基础之上的，所以只要稍微会那么一丁点 Javascript 就能实现很多 Axure 本身想都不敢想的功能。</p>
@@ -241,7 +291,7 @@
 <hr>
 <h1 id="预览">预览</h1>
 <p>下面是Axure预览时看到的效果：<br>
-<img src="http://wavef.cn/post-images/1586663797102.gif" alt="" loading="lazy"></p>
+<img src="http://localhost:4000/post-images/1586663797102.gif" alt="" loading="lazy"></p>
 <hr>
 <h1 id="下载">下载</h1>
 <p><strong>注意：如果你愿意给作者买颗糖，可以选择付费购买，如果你想持续获得更多稀奇古怪又好玩的Axure脚本类组件，可以加群免费下载</strong></p>
@@ -253,22 +303,22 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[主题酱LOGO设计]]></title>
-        <id>http://wavef.cn/post/theme-girl-logo-design/</id>
-        <link href="http://wavef.cn/post/theme-girl-logo-design/">
+        <id>http://localhost:4000/post/theme-girl-logo-design/</id>
+        <link href="http://localhost:4000/post/theme-girl-logo-design/">
         </link>
         <updated>2019-07-24T17:07:18.000Z</updated>
         <content type="html"><![CDATA[<p>朋友要做个名为“主题酱”的壁纸小程序，于是请WaveF做了回灵魂画师（捂眼），首先这里要求的是呆萌女孩+宠物，第一时间想到的是 RAGNAROK BATTLE OFFLINE（俗称RBO、仙境传说格斗版）那种风格，当时就挺喜欢那种蠢萌蠢萌的角色。🐹<br>
-<img src="http://wavef.cn/post-images/1563988785627.jpg" alt="" loading="lazy"></p>
+<img src="http://localhost:4000/post-images/1563988785627.jpg" alt="" loading="lazy"></p>
 <p>初定风格后开始下笔，感觉还是大眼睛比较有感觉，从来没正经学过手绘的我装模作样的在纸上画了起来，这里并没有什么中心思想，纯粹就是画着玩，毕竟这LOGO……不收钱！😭<br>
-<img src="http://wavef.cn/post-images/1563988442908.jpg" alt="" loading="lazy"></p>
+<img src="http://localhost:4000/post-images/1563988442908.jpg" alt="" loading="lazy"></p>
 <p>没错，最后选的就是趴在被窝里的那位，做了适当调整现在看起来至少有点LOGO的样子。嗯、就这样了，大家可以去捧个场，然后帮忙催一下对方把WaveF那好几百万的账给结了~👏</p>
-<figure data-type="image" tabindex="1"><img src="http://wavef.cn/post-images/1564457184828.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="http://localhost:4000/post-images/1564457184828.jpg" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Fireworks的JSON在线存取服务]]></title>
-        <id>http://wavef.cn/post/jsonpen-for-fireworks/</id>
-        <link href="http://wavef.cn/post/jsonpen-for-fireworks/">
+        <id>http://localhost:4000/post/jsonpen-for-fireworks/</id>
+        <link href="http://localhost:4000/post/jsonpen-for-fireworks/">
         </link>
         <updated>2019-07-21T11:18:11.000Z</updated>
         <content type="html"><![CDATA[<p>之前介绍过<a href="/post/frontend-json-storage-online">《纯前端的在线JSON存储服务》</a>，然后就尝试看能不能在Fireworks里读取和写入数据，结果很遗憾，从<a href="https://www.jsonstore.io/">jsonstore.io</a>等服务读数据是没有问题的，但写入时却报<strong>错误: 400，Bad Request</strong>，进行了多次尝试后依旧无果，最后只能放弃，猜测问题可能是因为<a href="http://johndunning.com/fireworks/about/FWXHR">FWXHR</a>发送的数据格式不匹配所致。</p>
@@ -346,86 +396,6 @@ dojo.require(&quot;fwlib.io&quot;);
 <p>为了在Fireworks里方便查看说明文档而添加的方法，会以<code>alert</code>形式显示。</p>
 <h1 id="注意事项">注意事项</h1>
 <p>如果要在Fireworks的jsf脚本里使用中文汉字，那需要使用GB2312对这个jsf文件进行编码，否则存取json时会出现乱码。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[纯前端的在线JSON存储服务]]></title>
-        <id>http://wavef.cn/post/frontend-json-storage-online/</id>
-        <link href="http://wavef.cn/post/frontend-json-storage-online/">
-        </link>
-        <updated>2019-07-17T14:05:08.000Z</updated>
-        <content type="html"><![CDATA[<p>有时想写些简单的小玩意放到网上分享给朋友，却苦于不懂后端代码、不想碰数据库、没钱买服务器？那么这里有几个免费便捷的在线JSON存储服务可以帮到你：</p>
-<ul>
-<li><a href="https://jsonbin.io">JSONbin.io</a></li>
-<li><a href="https://www.jsonstore.io">JsonStore.io</a></li>
-<li><a href="http://myjson.com">Myjson.com</a></li>
-<li><a href="https://jsonstorage.net">JsonStorage.net</a></li>
-</ul>
-<p>其实之前我也自己尝试用PHP边查边写了个叫JsonPen的网站，后来才发现原来国外早已经实现了，于是果断弃坑，毕竟我压根不想学PHP……</p>
-<p>上面介绍的那些服务里<strong>Myjson</strong>和<strong>JsonStorage</strong>比较简陋，有点不知道哪天突然就会挂掉的赶脚……<strong>JSONbin</strong>是四款里唯一需要注册后才能创建json的，支持版本管理和secret-key验证、可创建公有和私有json（话说我一直没弄明白这私有的json安全怎么保障）、比较完善的说明文档、还有付费增加请求次数的增值服务……<strong>jsonstore</strong>同样免费，并且无需登录就能使用，也很方便👏</p>
-<p>📝<em>Talk is cheap, show me the code:</em></p>
-<ul>
-<li><a href="https://codepen.io/WaveF/full/dxbedb">JsonBin 范例</a></li>
-<li><a href="https://codepen.io/WaveF/full/XvrqoO">JsonStore 范例</a></li>
-<li><a href="https://codepen.io/WaveF/full/MdZLYK">MyJson 范例</a></li>
-<li><a href="https://codepen.io/WaveF/full/aeoKGN">JsonStorage 范例</a></li>
-</ul>
-<p>以上是我在<a href="https://codepen.io">CodePen</a>用JQuery码的几个样本，别问我为什么2019还在用JQ，因为菜呗~ 😘</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[如何优雅的用Animate CC制作SVG交互动画]]></title>
-        <id>http://wavef.cn/post/create-interactive-svg-animation-with-animate-cc/</id>
-        <link href="http://wavef.cn/post/create-interactive-svg-animation-with-animate-cc/">
-        </link>
-        <updated>2019-07-16T14:15:49.000Z</updated>
-        <content type="html"><![CDATA[<p>最近Lottie又借助阿里的<a href="https://design.alipay.com/emotion">犸良</a>火了一把，其实可交互的svg方案有很多，lottie作为一个跨平台的解决方案确实是个不错的选择，但是如果只是做个简单的小动画，其实Flash（Animate CC）完全可以胜任，而且做起来还很简单。</p>
-<h1 id="插件">插件</h1>
-<p>要在Animate CC里输出svg，可以安装<a href="https://github.com/TomByrne/Flash2Svg">Flash2SVG</a>或<a href="https://svga.io/designer.html">SVGA</a>等插件，若还想在软件里边做动画边调试代码，那就应该选择<a href="https://github.com/cjgammon/SnapSVG-Animator">SnapSVGAnimator</a>了，不用在意那句“no longer actively supported”，由于插件已经完成了将内容转换为svg且导入<a href="http://snapsvg.io/">snap.svg</a>进行控制这个操作，所以更新也只是修复bug而已，一般不作死的话不会有什么大bug。</p>
-<h1 id="安装插件">安装插件</h1>
-<p>自从步入Creative Cloud时代，Adobe的插件管理就显得极度混乱，经常出现无法安装的情况，以至于官方也懒得维护了，直接推荐第三方的插件管理工具，而这些工具也是时灵时不灵，能不能装上完全听天由命，以下是可选工具：</p>
-<ul>
-<li><a href="https://install.anastasiy.com/">Anastasiy’s Extension Manager</a></li>
-<li><a href="https://zxpinstaller.com/">ZXP Installer</a></li>
-<li><a href="https://www.adobeexchange.com/resources/28">ExManCmd命令行</a></li>
-</ul>
-<p>个人推荐第一个，点击Install然后选择zxp安装包即可，哪怕软件没出现在列表里好像也能安装成功，而第二个是Adobe官方推荐的，成功率在我这里只有20%……命令行工具只能算是最后的抢救了。</p>
-<h1 id="案例">案例</h1>
-<p>正好要做一只猫趴在登录窗口里，用户输入账户名时，小猫的眼睛会盯着光标移动，用户输入密码时，小猫会用手捂住眼睛，而小猫的尾巴则会一直甩一直甩~</p>
-<figure data-type="image" tabindex="1"><img src="http://wavef.cn/post-images/1563289300793.gif" alt="小趴猫" loading="lazy"></figure>
-<figure data-type="image" tabindex="2"><img src="http://wavef.cn/post-images/1563289913508.gif" alt="小猫盯着" loading="lazy"></figure>
-<figure data-type="image" tabindex="3"><img src="http://wavef.cn/post-images/1563289925021.gif" alt="小猫捂脸" loading="lazy"></figure>
-<p>只需要把关键动作的动画做在元件内（影片剪辑/MovieClip），然后用代码控制帧的跳转即可，动画制作过程就不说了，懂的自然懂，不懂的可以搜索Flash动画基础教程，由于An只是Flash换了个名字的马甲，所以并没有什么Animate动画基础教程，都是炒Flash的冷饭！</p>
-<h1 id="代码">代码</h1>
-<p>为小猫的眼睛添加实例名：<code>eye1</code> 和 <code>eye2</code><br>
-为小猫的小手添加实例名：<code>hand1</code> 和 <code>hand2</code><br>
-控制代码如下：</p>
-<pre><code>var root = this;
-var eye1 = root.eye1;
-var eye2 = root.eye2;
-var hand1 = root.hand1;
-var hand2 = root.hand2;
-
-root.stop();
-window.cat = {
-	lookat: function (step) {
-		if (step &gt; 0 &amp;&amp; step &lt; 100) {
-			eye1.gotoAndStop(step);
-			eye2.gotoAndStop(step);
-		}
-	},
-	watching: function (flag) {
-		if (flag) {
-			hand1.gotoAndPlay(16);
-			hand2.gotoAndPlay(16);
-		} else {
-			hand1.gotoAndPlay(2);
-			hand2.gotoAndPlay(2);
-		}
-	}
-};
-</code></pre>
-<p>这里把小猫<code>cat</code>挂载到全局变量<code>window</code>上，前端小伙伴只需要调用<code>cat.lookat(N);</code>就能控制小猫看哪里，而调用<code>cat.watching(false);</code>小猫就会捂眼，简单粗暴省时省力。</p>
 ]]></content>
     </entry>
 </feed>

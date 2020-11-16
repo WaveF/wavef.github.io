@@ -1,8 +1,8 @@
 <html>
   <head>
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>assets | WaveF</title>
+<title>宝塔PM2运行Node脚本 | WaveF</title>
 <meta name="description" content="A Desigrammer" />
 <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
 <link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1605491248927">
@@ -90,61 +90,109 @@
   </div>
 </div>
 
-        <div class="current-tag-container">
-            <h2 class="title">
-                标签：# assets
-            </h2> 
-        </div>
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="http://localhost:4000/post/how-to-make-affinity-designers-iconfont-assets/">
-        <h2 class="post-title">制作AffinityDesigner的Iconfont资产库</h2>
-      </a>
-      <div class="post-info">
-        <span>
-          2019-07-16
-        </span>
-        <span>
-          6 min read
-        </span>
-        
-          <a href="http://localhost:4000/tag/jL0VGUcao/" class="post-tag">
-            # affinity designer
-          </a>
-        
-          <a href="http://localhost:4000/tag/-5Sfz7u5Qv/" class="post-tag">
-            # fireworks
-          </a>
-        
-          <a href="http://localhost:4000/tag/vISkeEoosY/" class="post-tag">
-            # scripting
-          </a>
-        
-          <a href="http://localhost:4000/tag/atKhxsAqoV/" class="post-tag">
-            # iconfont
-          </a>
-        
-          <a href="http://localhost:4000/tag/K-Rlm_DXCj/" class="post-tag">
-            # assets
-          </a>
-        
-      </div>
-      
-        <a href="http://localhost:4000/post/how-to-make-affinity-designers-iconfont-assets/" class="post-feature-image" style="background-image: url('http://localhost:4000/post-images/how-to-make-affinity-designers-iconfont-assets.jpg')">
-        </a>
-      
-      <div class="post-abstract">
-        
-      </di>
-    </article>
-  
-</div>
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              宝塔PM2运行Node脚本
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-11-03
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+                <a href="http://localhost:4000/tag/f-XsXKYCQ/" class="post-tag">
+                  # bt
+                </a>
+              
+                <a href="http://localhost:4000/tag/t06icwkB6D/" class="post-tag">
+                  # pm2
+                </a>
+              
+                <a href="http://localhost:4000/tag/gIW2ge3JNw/" class="post-tag">
+                  # node
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="http://localhost:4000/post-images/bt-pm2-run-node-script.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <h1 id="问题">问题</h1>
+<p>宝塔面板内的 PM2（图形界面）启动以下脚本后端口显示为OFF且服务不断重启直至关闭</p>
+<pre><code class="language-javascript">// app.js
+const express = require('express')
+const app = express()
+app.use('/home', (req, res)=&gt;{ res.send('home') })
+app.listen(3000, ()=&gt;{ console.log('server is running!') })
+</code></pre>
+<h1 id="解决思路">解决思路</h1>
+<p>网上搜索发现貌似是宝塔的 PM2 图形界面问题，使用 SSH 启动服务即可</p>
+<h1 id="操作步骤">操作步骤</h1>
+<ol>
+<li>确保阿里云ECS安全策略中放行目标端口，宝塔安全设置中允许放行目标端口；</li>
+<li>确保宝塔安装的 PM2 可正常显示 Node 版本，如不能，卸载 PM2 并重装，然后在 PM2 中安装 express，清除 PM2 中现有任务；</li>
+<li>宝塔安装“Linux工具箱”，运行后在「系统密码」中设置 SSH 的账号（默认为root）和密码；</li>
+<li>使用终端运行命令<code>ssh -p 22 root@domain</code>（domain替换为域名或ip），然后输入密码登入SSH；</li>
+<li>使用<code>cd</code>命令进入目标脚本目录，执行<code>npm i express --save</code>安装express，<br>
+然后运行命令<code>node app.js</code>，确认能正常运行后按<code>Ctrl+C</code>停止应用；</li>
+<li>回到宝塔的 PM2 界面，添加脚本所在目录及启动的JS文件和任务名，点击启动，可以看到端口已经不再显示为OFF且正常运行不重启，如果不行，在SSH执行<code>pm2 kill</code>清空一下原有任务后再进行此步骤；</li>
+</ol>
 
-        <div class="pagination-container">
-  
-  
-</div>
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#%E9%97%AE%E9%A2%98">问题</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF">解决思路</a></li>
+<li><a href="#%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4">操作步骤</a></li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="http://localhost:4000/post/vscode-cocoscreator-auto-refresh/">
+              <h3 class="post-title">
+                VSCode 保存时自动激活 Cocos Creator 刷新网页
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+<script src="https://cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '21b01f7d9293bda6ddba',
+    clientSecret: '0e57ee43791d7689c1e9d3f260bb8042fba91587',
+    repo: 'wavef.github.io',
+    owner: 'wavef',
+    admin: ['wavef'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
 
         <div class="site-footer">
   ©2019&nbsp;<a href="https://minicg.com" target="_blank">miniCG.com</a> | 

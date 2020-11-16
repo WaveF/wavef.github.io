@@ -2,13 +2,13 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Axure组件 - 网页编辑器 | WaveF</title>
+<title>VSCode 保存时自动激活 Cocos Creator 刷新网页 | WaveF</title>
 <meta name="description" content="A Desigrammer" />
 <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
-<link rel="shortcut icon" href="http://wavef.cn/favicon.ico?v=1586687486827">
+<link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1605491248927">
 <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.7.2/css/all.min.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.bootcss.com/KaTeX/0.10.2/katex.min.css">
-<link rel="stylesheet" href="http://wavef.cn/styles/main.css">
+<link rel="stylesheet" href="http://localhost:4000/styles/main.css">
 
 <script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
 <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">-->
@@ -29,8 +29,8 @@
     <div class="main">
       <div class="main-content">
         <div class="site-header">
-  <a href="http://wavef.cn">
-  <img class="avatar" src="http://wavef.cn/images/avatar.png?v=1586687486827" alt="">
+  <a href="http://localhost:4000">
+  <img class="avatar" src="http://localhost:4000/images/avatar.png?v=1605491248927" alt="">
   </a>
   <h1 class="site-title">
     WaveF
@@ -93,52 +93,61 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Axure组件 - 网页编辑器
+              VSCode 保存时自动激活 Cocos Creator 刷新网页
             </h2>
             <div class="post-info">
               <span>
-                2020-04-12
+                2020-11-02
               </span>
               <span>
-                2 min read
+                1 min read
               </span>
               
-                <a href="http://wavef.cn/tag/NVBEAjlTL/" class="post-tag">
-                  # axure
+                <a href="http://localhost:4000/tag/hiy-0syU_/" class="post-tag">
+                  # vscode
+                </a>
+              
+                <a href="http://localhost:4000/tag/rDYuI_rhlY/" class="post-tag">
+                  # cocos creator
                 </a>
               
             </div>
             
-              <img class="post-feature-image" src="http://wavef.cn/post-images/axurerp9-webview.jpg" alt="">
+              <img class="post-feature-image" src="http://localhost:4000/post-images/vscode-cocoscreator-auto-refresh.jpg" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <h1 id="简介">简介</h1>
-<p>给 Axure 9.x 做了个网页编辑器，简单来讲就是在动态面板里添加了 HTML 和 JS 的文本输入框，让用户可以把网上搬砖得到的效果代码贴进来直接产生一个类似 <strong>webview</strong> 控件的效果。</p>
-<figure data-type="image" tabindex="1"><img src="http://wavef.cn/post-images/1586668040393.jpg" alt="" loading="lazy"></figure>
-<hr>
-<h1 id="关于">关于</h1>
-<p>说一下为什么做这玩意，Axure 其实从框架上来讲是基于 jquery 的，然后它还包含了一套自己封装过的简化版 jquery 方法，而 Axure 的动画和交互等基本都是构建在这个基础之上的，所以只要稍微会那么一丁点 Javascript 就能实现很多 Axure 本身想都不敢想的功能。</p>
-<p>再者，Axure 里通过拖放产生的交互在做简单东西的时候还是不错的，但更多情况下交互的逻辑比写代码还要复杂10000000倍！加上大多数 Axure 交流群里的网友问的几乎全是效果啊、动效啊之类的东西，而不像产品经理一样更关注业务流程，所以做一个简单的 <strong>webview</strong> 对于实现一些搬砖效果来讲还是挺方便的。</p>
-<hr>
-<h1 id="预览">预览</h1>
-<p>下面是Axure预览时看到的效果：<br>
-<img src="http://wavef.cn/post-images/1586663797102.gif" alt="" loading="lazy"></p>
-<hr>
-<h1 id="下载">下载</h1>
-<p><strong>注意：如果你愿意给作者买颗糖，可以选择付费购买，如果你想持续获得更多稀奇古怪又好玩的Axure脚本类组件，可以加群免费下载</strong></p>
-<ul>
-<li><a href="https://uitool.cn/assets/axure_webeditor_v2">网盘下载（售价￥1.0）</a></li>
-<li><a href="https://jq.qq.com/?_wv=1027&amp;k=5tRAN2L">加群获取（免费）</a></li>
-</ul>
+                <h2 id="思路">思路</h2>
+<p>每次保存 JS 文件后自动切换到 Cocos Creator 触发刷新机制，然后再切换回 VSCode 继续编辑，如果只有单屏，也可以增加“切换到浏览器”观察结果。</p>
+<h2 id="实现">实现</h2>
+<ol>
+<li>
+<p>运行 VSCode 搜索并安装 Run on Save (MEDIUS) 扩展，然后按 F1 执行 Run on Save: Enable</p>
+</li>
+<li>
+<p>对扩展进行以下配置（修改为你的程序路径，Win同）：</p>
+</li>
+</ol>
+<pre><code class="language-javascript:">  &quot;medius.runonsave&quot;: {
+    &quot;commands&quot;: [
+      {
+        &quot;match&quot;: &quot;\\.js$&quot;,
+        &quot;isAsync&quot;: false,
+        &quot;cmd&quot;: &quot;open /Applications/CocosCreator/Creator/2.4.3/CocosCreator.app &amp;&amp; sleep 0.2 &amp;&amp; open '/Applications/Visual Studio Code.app'&quot;
+      }
+    ]
+  }
+</code></pre>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
-<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
-<li><a href="#%E5%85%B3%E4%BA%8E">关于</a></li>
-<li><a href="#%E9%A2%84%E8%A7%88">预览</a></li>
-<li><a href="#%E4%B8%8B%E8%BD%BD">下载</a></li>
+<li>
+<ul>
+<li><a href="#%E6%80%9D%E8%B7%AF">思路</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0">实现</a></li>
+</ul>
+</li>
 </ul>
 
               </div>
@@ -149,9 +158,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="http://wavef.cn/post/theme-girl-logo-design/">
+            <a href="http://localhost:4000/post/box3d-demo/">
               <h3 class="post-title">
-                主题酱LOGO设计
+                三维盒子包装DEMO
               </h3>
             </a>
           </div>
@@ -187,7 +196,7 @@
 
         <div class="site-footer">
   ©2019&nbsp;<a href="https://minicg.com" target="_blank">miniCG.com</a> | 
-  <a class="rss" href="http://wavef.cn/atom.xml" target="_blank">RSS</a>
+  <a class="rss" href="http://localhost:4000/atom.xml" target="_blank">RSS</a>
 </div>
 
 <script>
@@ -248,7 +257,7 @@
 </script>
 <script>
   $('img').unveil({
-  	placeholder: 'http://wavef.cn/images/loading.gif'
+  	placeholder: 'http://wavef.cn/images/loading.svg'
   });
 </script>
       </div>
