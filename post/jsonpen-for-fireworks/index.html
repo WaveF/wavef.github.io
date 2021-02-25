@@ -5,10 +5,10 @@
 <title>Fireworks的JSON在线存取服务 | WaveF</title>
 <meta name="description" content="A Desigrammer" />
 <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
-<link rel="shortcut icon" href="http://wavef.cn/favicon.ico?v=1605491248927">
+<link rel="shortcut icon" href="https://wavef.cn:4000/favicon.ico?v=1614227700188">
 <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/5.7.2/css/all.min.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.bootcss.com/KaTeX/0.10.2/katex.min.css">
-<link rel="stylesheet" href="http://wavef.cn/styles/main.css">
+<link rel="stylesheet" href="https://wavef.cn:4000/styles/main.css">
 
 <script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
 <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">-->
@@ -29,8 +29,8 @@
     <div class="main">
       <div class="main-content">
         <div class="site-header">
-  <a href="http://wavef.cn">
-  <img class="avatar" src="http://wavef.cn/images/avatar.png?v=1605491248927" alt="">
+  <a href="https://wavef.cn:4000">
+  <img class="avatar" src="https://wavef.cn:4000/images/avatar.png?v=1614227700188" alt="">
   </a>
   <h1 class="site-title">
     WaveF
@@ -103,22 +103,22 @@
                 5 min read
               </span>
               
-                <a href="http://wavef.cn/tag/cJhxzmFKZ/" class="post-tag">
+                <a href="https://wavef.cn:4000/tag/cJhxzmFKZ/" class="post-tag">
                   # jsonpen
                 </a>
               
-                <a href="http://wavef.cn/tag/-5Sfz7u5Qv/" class="post-tag">
+                <a href="https://wavef.cn:4000/tag/-5Sfz7u5Qv/" class="post-tag">
                   # fireworks
                 </a>
               
             </div>
             
-              <img class="post-feature-image" src="http://wavef.cn/post-images/jsonpen-for-fireworks.jpg" alt="">
+              <img class="post-feature-image" src="https://wavef.cn:4000/post-images/jsonpen-for-fireworks.jpg" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>之前介绍过<a href="/post/frontend-json-storage-online">《纯前端的在线JSON存储服务》</a>，然后就尝试看能不能在Fireworks里读取和写入数据，结果很遗憾，从<a href="https://www.jsonstore.io/">jsonstore.io</a>等服务读数据是没有问题的，但写入时却报<strong>错误: 400，Bad Request</strong>，进行了多次尝试后依旧无果，最后只能放弃，猜测问题可能是因为<a href="http://johndunning.com/fireworks/about/FWXHR">FWXHR</a>发送的数据格式不匹配所致。</p>
-<p><a href="http://www.minicg.com/index.php/fw">Fireworks的未来由WaveF守护！</a>秉着对Fireworks不离不弃的责任和态度，我又搬出了已经停掉的JsonPen.com网站源码，坚决要为Fireworks打通在线存取JSON功能，不要问我为什么，因为<a href="https://www.jianshu.com/p/eb171c98c5ea">Fireworks是世界上最好的UI软件</a>！</p>
+                <p>之前介绍过<a href="/post/frontend-json-storage-online">《纯前端的在线JSON存储服务》</a>，然后就尝试看能不能在Fireworks里读取和写入数据，结果很遗憾，从<a href="https://www.jsonstore.io/">jsonstore.io</a>等服务读数据是没有问题的，但写入时却报<strong>错误: 400，Bad Request</strong>，进行了多次尝试后依旧无果，最后只能放弃，猜测问题可能是因为<a href="https://johndunning.com/fireworks/about/FWXHR">FWXHR</a>发送的数据格式不匹配所致。</p>
+<p><a href="https://www.minicg.com/index.php/fw">Fireworks的未来由WaveF守护！</a>秉着对Fireworks不离不弃的责任和态度，我又搬出了已经停掉的JsonPen.com网站源码，坚决要为Fireworks打通在线存取JSON功能，不要问我为什么，因为<a href="https://www.jianshu.com/p/eb171c98c5ea">Fireworks是世界上最好的UI软件</a>！</p>
 <h1 id="fwxhr">FWXHR</h1>
 <p>这是JohnDurnning大神多年前写的一款插件，使用Flex发起网络请求，与Fireworks进行交互，由于当时Adobe的面板插件都是使用Flash开发的，所以交换数据上没有问题，但是由于核心SWF没有开源，所以工作只能在FWXHR基础上展开。</p>
 <p>FWXHR的使用非常简单，只需在写脚本时将其作为模块导入，然后调用对应的方法即可：</p>
@@ -128,7 +128,7 @@ dojo.require(&quot;fwlib.io&quot;);
 </code></pre>
 <h2 id="post请求">POST请求</h2>
 <pre><code>var response = fwlib.io.request(
-    &quot;http://your-domain.com/api&quot;,  {
+    &quot;https://your-domain.com/api&quot;,  {
 		    method: 'POST',
 				headers: { &quot;Content-Type&quot;: &quot;application/xml; charset=utf-8&quot; },
         data: { foo: 'bar' }, //数据传输
@@ -137,10 +137,10 @@ dojo.require(&quot;fwlib.io&quot;);
 );
 </code></pre>
 <h2 id="get请求">GET请求</h2>
-<pre><code>var response = fwlib.io.request( &quot;http://your-domain.com/api&quot; );
+<pre><code>var response = fwlib.io.request( &quot;https://your-domain.com/api&quot; );
 </code></pre>
 <h2 id="打印数据">打印数据</h2>
-<p><em>需先开启<a href="http://johndunning.com/fireworks/about/FWConsole">Fireworks Console</a>控制台面板</em></p>
+<p><em>需先开启<a href="https://johndunning.com/fireworks/about/FWConsole">Fireworks Console</a>控制台面板</em></p>
 <pre><code>console.log(response);
 </code></pre>
 <h1 id="jsonpen">JSONPEN</h1>
@@ -240,7 +240,7 @@ dojo.require(&quot;fwlib.io&quot;);
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="http://wavef.cn/post/frontend-json-storage-online/">
+            <a href="https://wavef.cn:4000/post/frontend-json-storage-online/">
               <h3 class="post-title">
                 纯前端的在线JSON存储服务
               </h3>
@@ -278,7 +278,7 @@ dojo.require(&quot;fwlib.io&quot;);
 
         <div class="site-footer">
   ©2019&nbsp;<a href="https://minicg.com" target="_blank">miniCG.com</a> | 
-  <a class="rss" href="http://wavef.cn/atom.xml" target="_blank">RSS</a>
+  <a class="rss" href="https://wavef.cn:4000/atom.xml" target="_blank">RSS</a>
 </div>
 
 <script>
@@ -339,7 +339,7 @@ dojo.require(&quot;fwlib.io&quot;);
 </script>
 <script>
   $('img').unveil({
-  	placeholder: 'http://wavef.cn/images/loading.svg'
+  	placeholder: 'https://wavef.cn/images/loading.svg'
   });
 </script>
       </div>
