@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="https://www.w3.org/2005/Atom">
-    <id>https://wavef.cn:4000</id>
+    <id>https://wavef.cn</id>
     <title>WaveF</title>
     <updated>2021-02-25T04:46:11.058Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://wavef.cn:4000"/>
-    <link rel="self" href="https://wavef.cn:4000/atom.xml"/>
+    <link rel="alternate" href="https://wavef.cn"/>
+    <link rel="self" href="https://wavef.cn/atom.xml"/>
     <subtitle>A Desigrammer</subtitle>
-    <logo>https://wavef.cn:4000/images/avatar.png</logo>
-    <icon>https://wavef.cn:4000/favicon.ico</icon>
+    <logo>https://wavef.cn/images/avatar.png</logo>
+    <icon>https://wavef.cn/favicon.ico</icon>
     <rights>All rights reserved 2021, WaveF</rights>
     <entry>
         <title type="html"><![CDATA[宝塔PM2运行Node脚本]]></title>
-        <id>https://wavef.cn:4000/post/bt-pm2-run-node-script/</id>
-        <link href="https://wavef.cn:4000/post/bt-pm2-run-node-script/">
+        <id>https://wavef.cn/post/bt-pm2-run-node-script/</id>
+        <link href="https://wavef.cn/post/bt-pm2-run-node-script/">
         </link>
         <updated>2020-11-03T01:53:44.000Z</updated>
         <content type="html"><![CDATA[<h1 id="问题">问题</h1>
@@ -40,8 +40,8 @@ app.listen(3000, ()=&gt;{ console.log('server is running!') })
     </entry>
     <entry>
         <title type="html"><![CDATA[VSCode 保存时自动激活 Cocos Creator 刷新网页]]></title>
-        <id>https://wavef.cn:4000/post/vscode-cocoscreator-auto-refresh/</id>
-        <link href="https://wavef.cn:4000/post/vscode-cocoscreator-auto-refresh/">
+        <id>https://wavef.cn/post/vscode-cocoscreator-auto-refresh/</id>
+        <link href="https://wavef.cn/post/vscode-cocoscreator-auto-refresh/">
         </link>
         <updated>2020-11-02T04:08:00.000Z</updated>
         <content type="html"><![CDATA[<h2 id="思路">思路</h2>
@@ -69,8 +69,8 @@ app.listen(3000, ()=&gt;{ console.log('server is running!') })
     </entry>
     <entry>
         <title type="html"><![CDATA[三维盒子包装DEMO]]></title>
-        <id>https://wavef.cn:4000/post/box3d-demo/</id>
-        <link href="https://wavef.cn:4000/post/box3d-demo/">
+        <id>https://wavef.cn/post/box3d-demo/</id>
+        <link href="https://wavef.cn/post/box3d-demo/">
         </link>
         <updated>2020-06-12T10:11:13.000Z</updated>
         <content type="html"><![CDATA[<p>好久没碰Aframe了，我记得最早是从0.4.0开始的吧，那时候用这个给脉动写了个蹩脚的VR小游戏，因为人手不足，所以效果也不是很理想，但那是我第一次真正用这个框架搭出一个VR环境来，感触挺深的。</p>
@@ -83,8 +83,8 @@ app.listen(3000, ()=&gt;{ console.log('server is running!') })
     </entry>
     <entry>
         <title type="html"><![CDATA[blender脑残粉遭遇战]]></title>
-        <id>https://wavef.cn:4000/post/blender-nc-fans/</id>
-        <link href="https://wavef.cn:4000/post/blender-nc-fans/">
+        <id>https://wavef.cn/post/blender-nc-fans/</id>
+        <link href="https://wavef.cn/post/blender-nc-fans/">
         </link>
         <updated>2020-06-12T09:38:07.000Z</updated>
         <content type="html"><![CDATA[<p>最近 Affinity 群里乱入了两名 blender 用户，这个群主要是用来交流 Affinity Designer、Photo和Publisher 的一些使用经验和资源的，这两位哥们儿一开始就在群里发自己跟着教程做的一些 blender 案例，其实我有时也会在群里发一下 AD 怎么处理三维软件的导出图，加上最近 Blender 2.8 出来之后也是火的一塌糊涂，我也在尝试着了解一下这个开源软件。</p>
@@ -102,8 +102,8 @@ app.listen(3000, ()=&gt;{ console.log('server is running!') })
     </entry>
     <entry>
         <title type="html"><![CDATA[Cinema 4D 导出 GLTF 动画到 Three.js 引擎]]></title>
-        <id>https://wavef.cn:4000/post/c4d-gltf-animation-to-web-3d/</id>
-        <link href="https://wavef.cn:4000/post/c4d-gltf-animation-to-web-3d/">
+        <id>https://wavef.cn/post/c4d-gltf-animation-to-web-3d/</id>
+        <link href="https://wavef.cn/post/c4d-gltf-animation-to-web-3d/">
         </link>
         <updated>2020-06-01T01:22:38.000Z</updated>
         <content type="html"><![CDATA[<ol>
@@ -117,7 +117,7 @@ app.listen(3000, ()=&gt;{ console.log('server is running!') })
 <hr>
 <ol start="3">
 <li>导出 gltf/glb 格式，设置如下：<br>
-<img src="https://wavef.cn:4000/post-images/1590985611962.jpg" alt="" loading="lazy"></li>
+<img src="https://wavef.cn/post-images/1590985611962.jpg" alt="" loading="lazy"></li>
 </ol>
 <hr>
 <ol start="4">
@@ -150,8 +150,8 @@ app.listen(3000, ()=&gt;{ console.log('server is running!') })
     </entry>
     <entry>
         <title type="html"><![CDATA[Axure秘笈 - 你绝对不知道的技巧]]></title>
-        <id>https://wavef.cn:4000/post/axure-tricks/</id>
-        <link href="https://wavef.cn:4000/post/axure-tricks/">
+        <id>https://wavef.cn/post/axure-tricks/</id>
+        <link href="https://wavef.cn/post/axure-tricks/">
         </link>
         <updated>2020-05-10T14:41:54.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
@@ -255,8 +255,8 @@ app.listen(3000, ()=&gt;{ console.log('server is running!') })
     </entry>
     <entry>
         <title type="html"><![CDATA[Axure组件 - 环形幻灯片]]></title>
-        <id>https://wavef.cn:4000/post/axure-carousel/</id>
-        <link href="https://wavef.cn:4000/post/axure-carousel/">
+        <id>https://wavef.cn/post/axure-carousel/</id>
+        <link href="https://wavef.cn/post/axure-carousel/">
         </link>
         <updated>2020-04-12T11:02:50.000Z</updated>
         <content type="html"><![CDATA[<h1 id="简介">简介</h1>
@@ -266,8 +266,8 @@ app.listen(3000, ()=&gt;{ console.log('server is running!') })
 <p>群友问得最多的问题之一就是图片轮播了，其实普通的轮播用动态面板内置动作就能实现，但有人问起这种带点三维切换的…于是把基于 jquery.cloud9carousel 的组件封装了一层给 Axure 调用，其实这样玩 Axure 有点找回以前用 Flash 搞特效的感觉 😙</p>
 <hr>
 <h1 id="预览">预览</h1>
-<p><img src="https://wavef.cn:4000/post-images/1586686864045.gif" alt="" loading="lazy"><br>
-<img src="https://wavef.cn:4000/post-images/1586686903749.jpg" alt="" loading="lazy"></p>
+<p><img src="https://wavef.cn/post-images/1586686864045.gif" alt="" loading="lazy"><br>
+<img src="https://wavef.cn/post-images/1586686903749.jpg" alt="" loading="lazy"></p>
 <hr>
 <h1 id="下载">下载</h1>
 <ul>
@@ -277,13 +277,13 @@ app.listen(3000, ()=&gt;{ console.log('server is running!') })
     </entry>
     <entry>
         <title type="html"><![CDATA[Axure组件 - 网页编辑器]]></title>
-        <id>https://wavef.cn:4000/post/axure-webview/</id>
-        <link href="https://wavef.cn:4000/post/axure-webview/">
+        <id>https://wavef.cn/post/axure-webview/</id>
+        <link href="https://wavef.cn/post/axure-webview/">
         </link>
         <updated>2020-04-12T02:29:04.000Z</updated>
         <content type="html"><![CDATA[<h1 id="简介">简介</h1>
 <p>给 Axure 9.x 做了个网页编辑器，简单来讲就是在动态面板里添加了 HTML 和 JS 的文本输入框，让用户可以把网上搬砖得到的效果代码贴进来直接产生一个类似 <strong>webview</strong> 控件的效果。</p>
-<figure data-type="image" tabindex="1"><img src="https://wavef.cn:4000/post-images/1586668040393.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://wavef.cn/post-images/1586668040393.jpg" alt="" loading="lazy"></figure>
 <hr>
 <h1 id="关于">关于</h1>
 <p>说一下为什么做这玩意，Axure 其实从框架上来讲是基于 jquery 的，然后它还包含了一套自己封装过的简化版 jquery 方法，而 Axure 的动画和交互等基本都是构建在这个基础之上的，所以只要稍微会那么一丁点 Javascript 就能实现很多 Axure 本身想都不敢想的功能。</p>
@@ -291,7 +291,7 @@ app.listen(3000, ()=&gt;{ console.log('server is running!') })
 <hr>
 <h1 id="预览">预览</h1>
 <p>下面是Axure预览时看到的效果：<br>
-<img src="https://wavef.cn:4000/post-images/1586663797102.gif" alt="" loading="lazy"></p>
+<img src="https://wavef.cn/post-images/1586663797102.gif" alt="" loading="lazy"></p>
 <hr>
 <h1 id="下载">下载</h1>
 <p><strong>注意：如果你愿意给作者买颗糖，可以选择付费购买，如果你想持续获得更多稀奇古怪又好玩的Axure脚本类组件，可以加群免费下载</strong></p>
@@ -303,22 +303,22 @@ app.listen(3000, ()=&gt;{ console.log('server is running!') })
     </entry>
     <entry>
         <title type="html"><![CDATA[主题酱LOGO设计]]></title>
-        <id>https://wavef.cn:4000/post/theme-girl-logo-design/</id>
-        <link href="https://wavef.cn:4000/post/theme-girl-logo-design/">
+        <id>https://wavef.cn/post/theme-girl-logo-design/</id>
+        <link href="https://wavef.cn/post/theme-girl-logo-design/">
         </link>
         <updated>2019-07-24T17:07:18.000Z</updated>
         <content type="html"><![CDATA[<p>朋友要做个名为“主题酱”的壁纸小程序，于是请WaveF做了回灵魂画师（捂眼），首先这里要求的是呆萌女孩+宠物，第一时间想到的是 RAGNAROK BATTLE OFFLINE（俗称RBO、仙境传说格斗版）那种风格，当时就挺喜欢那种蠢萌蠢萌的角色。🐹<br>
-<img src="https://wavef.cn:4000/post-images/1563988785627.jpg" alt="" loading="lazy"></p>
+<img src="https://wavef.cn/post-images/1563988785627.jpg" alt="" loading="lazy"></p>
 <p>初定风格后开始下笔，感觉还是大眼睛比较有感觉，从来没正经学过手绘的我装模作样的在纸上画了起来，这里并没有什么中心思想，纯粹就是画着玩，毕竟这LOGO……不收钱！😭<br>
-<img src="https://wavef.cn:4000/post-images/1563988442908.jpg" alt="" loading="lazy"></p>
+<img src="https://wavef.cn/post-images/1563988442908.jpg" alt="" loading="lazy"></p>
 <p>没错，最后选的就是趴在被窝里的那位，做了适当调整现在看起来至少有点LOGO的样子。嗯、就这样了，大家可以去捧个场，然后帮忙催一下对方把WaveF那好几百万的账给结了~👏</p>
-<figure data-type="image" tabindex="1"><img src="https://wavef.cn:4000/post-images/1564457184828.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://wavef.cn/post-images/1564457184828.jpg" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Fireworks的JSON在线存取服务]]></title>
-        <id>https://wavef.cn:4000/post/jsonpen-for-fireworks/</id>
-        <link href="https://wavef.cn:4000/post/jsonpen-for-fireworks/">
+        <id>https://wavef.cn/post/jsonpen-for-fireworks/</id>
+        <link href="https://wavef.cn/post/jsonpen-for-fireworks/">
         </link>
         <updated>2019-07-21T11:18:11.000Z</updated>
         <content type="html"><![CDATA[<p>之前介绍过<a href="/post/frontend-json-storage-online">《纯前端的在线JSON存储服务》</a>，然后就尝试看能不能在Fireworks里读取和写入数据，结果很遗憾，从<a href="https://www.jsonstore.io/">jsonstore.io</a>等服务读数据是没有问题的，但写入时却报<strong>错误: 400，Bad Request</strong>，进行了多次尝试后依旧无果，最后只能放弃，猜测问题可能是因为<a href="https://johndunning.com/fireworks/about/FWXHR">FWXHR</a>发送的数据格式不匹配所致。</p>
